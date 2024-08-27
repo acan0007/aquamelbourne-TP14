@@ -1,11 +1,14 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 
 # Configuration settings
 app = Flask(__name__)
 app.config.from_object(Config)
+app.secret_key = 'secret_aquamelb_h3h3#'
 db = SQLAlchemy(app)
+
+PASSWORD = '5ecr3t_aquamelb#'
 
 class TestModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,7 +28,39 @@ def get_data():
     result = [{"id": entry.id, "data": entry.data} for entry in all_data]
     return jsonify(result)
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        if request.form['password'] == PASSWORD:
+            session['authenticated'] = True
+            return redirect(url_for('index'))
+        else:
+            return redirect(url_for('login', error="Invalid password, please try again."))
+    return send_from_directory('static', 'login.html')
+
+@app.route('/', methods=['GET'])
+def index():
+    if not session.get('authenticated'):
+       return redirect(url_for('login'))
+    return send_from_directory('static', 'index.html')
+
+@app.route('/index2', methods=['GET'])
+def index2():
+    return send_from_directory('static', 'index2.html')
+
+@app.route('/articles', methods=['GET'])
+def articles():
+    return send_from_directory('static', 'articles.html')
+
+@app.route('/projects', methods=['GET'])
+def projects():
+    return send_from_directory('static', 'projects.html')
+
+@app.route('/realmonitor', methods=['GET'])
+def realmonitor():
+    return send_from_directory('static', 'realmonitor.html')
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
