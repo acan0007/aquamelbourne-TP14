@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollutant Data Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pollutant Data Charts</h1>
+
+    <div class="chart-container">
+        <h2>Bar Chart: Concentration of DO Across Dates</h2>
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Pie Chart: Proportion of Nitrogen Compounds</h2>
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Line Chart: Changes in N_TOTAL Over Time</h2>
+        <canvas id="lineChart"></canvas>
+    </div>
+
+    <script src="/static/js/pollutant_charts.js"></script>
+</body>
+</html>

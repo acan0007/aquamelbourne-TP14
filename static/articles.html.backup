@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Aquamelbourne | Articles</title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="/static/css/styles.css" rel="stylesheet" />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">Home</a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#projects">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead">
+      <div
+        class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center"
+      >
+        <div class="d-flex justify-content-center">
+          <div class="text-center">
+            <h1 class="mx-auto my-0 text-uppercase" style="font-size: 3.5rem;">Articles</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">
+              Explore our curated selection of articles focused on the intersection of urban development and environmental preservation in Melbourne.
+            </h2>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Articles Section -->
+    <section
+      id="features-section"
+      class="py-5"
+      style="background-color: transparent; padding: 20px"
+    >
+      <div class="container">
+        <!-- First Row -->
+        <a href="#" class="article-link text-decoration-none">
+          <div
+            class="row align-items-center mb-5 text-center justify-content-center article-row"
+          >
+            <div class="col-md-3">
+              <div
+                class="card mx-auto border-0 bg-transparent shadow-none"
+                style="width: 250px; height: 250px; overflow: hidden"
+              >
+                <img
+                  src="/static/assets/img/8.jpg"
+                  class="img-fluid w-100 h-100"
+                  alt="Water Quality Image"
+                  style="object-fit: cover"
+                />
+              </div>
+            </div>
+            <div
+              class="col-md-9 d-flex flex-column justify-content-center text-center"
+            >
+              <h5 class="card-title mt-3 fw-bold">
+                Measuring the gaps in drinking water quality and policy across
+                regional and remote Australia
+              </h5>
+              <p class="card-text">
+                Drinking water quality remains a persistent challenge across
+                regional and remote Australia. We reviewed public reporting by
+                177 utilities and conducted a national assessment of reported
+                exceedances against the health-based and aesthetic guideline
+                values of the Australian Drinking Water Guidelines (ADWG).
+              </p>
+              <p class="card-text fw-semibold text-decoration-underline">
+                Paul R. Wyrwoll, Ana Manero, Katherine S. Taylor, Evie Rose & R.
+                Quentin Grafton
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <!-- Second Row -->
+        <a href="#" class="article-link text-decoration-none">
+          <div
+            class="row align-items-center mb-5 text-center justify-content-center article-row"
+          >
+            <div class="col-md-3">
+              <div
+                class="card mx-auto border-0 bg-transparent shadow-none"
+                style="width: 250px; height: 250px; overflow: hidden"
+              >
+                <img
+                  src="/static/assets/img/2.jpg"
+                  class="img-fluid w-100 h-100"
+                  alt="Drinking Water Access Image"
+                  style="object-fit: cover"
+                />
+              </div>
+            </div>
+            <div class="col-md-9 d-flex flex-column justify-content-center">
+              <h5 class="card-title mt-3 fw-bold">
+                Some of us don't have high-quality drinking water, and it's
+                putting public health at risk. How do we deliver universal
+                access?
+              </h5>
+              <p class="card-text">
+                A new Productivity Commission report has urged Australian
+                governments to commit to providing universal access to safe and
+                reliable drinking water, warning that public health depends on
+                it. The report,
+                <span class="text-decoration-underline"
+                  >National Water Reform 2024</span
+                >, is the result of an inquiry requested by the federal
+                government.
+              </p>
+              <p class="published-date">Published: June 28, 2024 3:39pm AEST</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Custom CSS for hover effect -->
+    <style>
+      .article-link:hover .card-title,
+      .article-link:hover .card-text,
+      .article-link:hover img {
+        color: #0056b3;
+        transform: scale(1.05);
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .article-row:hover {
+        border-radius: 12px;
+        border: solid 1px #000;
+        padding: 10px;
+      }
+    </style>
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+      <div class="container px-4 px-lg-5">
+        Copyright &copy; Aqua Melbourne 2024 By RASKR-TP14
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/static/js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>

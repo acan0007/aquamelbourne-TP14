@@ -51,4 +51,20 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Form validation to sanitize dangerous characters
+    var form = document.querySelector('form');
+     form.addEventListener('submit', function(event) {
+         var passwordInput = form.querySelector('input[name="password"]');
+         var password = passwordInput.value;
+
+         // Disallow dangerous special characters: ', -, =
+         var regex = /[\'\-=\;]/;
+         if (regex.test(password)) {
+             alert("Invalid characters in password! The characters ', -, and = are not allowed.");
+             event.preventDefault();
+             return false;
+         }
+     });
+
+
 });

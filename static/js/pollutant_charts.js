@@ -1,0 +1,97 @@
+// Fetch data from the Flask API
+async function fetchData() {
+    const response = await fetch('/pollutant_data');
+    return await response.json();
+}
+
+// Initialize Charts
+function initCharts(data) {
+    const labels = data.map(item => item.date);
+    const n_total = data.map(item => parseFloat(item.N_TOTAL));
+    const n_nh3 = data.map(item => parseFloat(item.N_NH3));
+    const n_no2 = data.map(item => parseFloat(item.N_NO2));
+    const n_no3 = data.map(item => parseFloat(item.N_NO3));
+    const do_mg = data.map(item => parseFloat(item.DO_mg));
+    const temp = data.map(item => parseFloat(item.Temp));
+
+    // Bar Chart: Concentration of a Specific Chemical Across Sites
+    const barChartCtx = document.getElementById('barChart').getContext('2d');
+    new Chart(barChartCtx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'DO (mg/L)',
+                data: do_mg,
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Pie Chart: Proportion of Different Nitrogen Compounds
+    const pieChartCtx = document.getElementById('pieChart').getContext('2d');
+    new Chart(pieChartCtx, {
+        type: 'pie',
+        data: {
+            labels: ['N_TOTAL', 'N_NH3', 'N_NO2', 'N_NO3'],
+            datasets: [{
+                data: [
+                    n_total.reduce((a, b) => a + b, 0),
+                    n_nh3.reduce((a, b) => a + b, 0),
+                    n_no2.reduce((a, b) => a + b, 0),
+                    n_no3.reduce((a, b) => a + b, 0)
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Line Chart: Tracking Changes in Nitrogen Over Time
+    const lineChartCtx = document.getElementById('lineChart').getContext('2d');
+    new Chart(lineChartCtx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'N_TOTAL (ug/L)',
+                data: n_total,
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Fetch data and initialize charts
+fetchData().then(data => initCharts(data));
