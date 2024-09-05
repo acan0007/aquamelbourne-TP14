@@ -107,25 +107,25 @@ def heatmap_data():
         return jsonify({"error": "Internal Server Error"}), 500
 
 # Function to fetch pollutant data from RDB
-@app.route('/pollutant_data', methods=['GET'])
-def pollutant_data():
-    try:
-        # FETCH DATA FROM DB FOR PATTERSON RIVER
-        query = text('''
-            SELECT "site_name_short", "date", "N_TOTAL", "N_NH3", "N_NO2", "N_NO3", "DO_mg", "Temp"
-            FROM site_name
-            WHERE "site_name_short" = :site_name
-        ''')
-        results = db.session.execute(query, {'site_name': 'Patterson River'}).fetchall()
-
-        # CONVERT THE QUERY RESULTS TO A LIST OF DICT
-        data = [{"site_name_short": row[0], "date": row[1].isoformat(), "N_TOTAL": row[2], "N_NH3": row[3], "N_NO2": row[4], "N_NO3": row[5], "DO_mg": row[6], "Temp": row[7]} for row in results]
-
-        # RETURN DATA AS JSON
-        return jsonify(data)
-    except Exception as e:
-        print(f"Error: {e}")
-        return jsonify({"error": "Internal Server Error"}), 500
+#@app.route('/pollutant_data', methods=['GET'])
+#def pollutant_data():
+#    try:
+#        # FETCH DATA FROM DB FOR PATTERSON RIVER
+#        query = text('''
+#            SELECT "site_name_short", "date", "N_TOTAL", "N_NH3", "N_NO2", "N_NO3", "DO_mg", "Temp"
+#            FROM site_name
+#            WHERE "site_name_short" = :site_name
+#        ''')
+#        results = db.session.execute(query, {'site_name': 'Patterson River'}).fetchall()
+#
+#        # CONVERT THE QUERY RESULTS TO A LIST OF DICT
+#        data = [{"site_name_short": row[0], "date": row[1].isoformat(), "N_TOTAL": row[2], "N_NH3": row[3], "N_NO2": row[4], "N_NO3": row[5], "DO_mg": row[6], "Temp": row[7]} for row in results]
+#
+#        # RETURN DATA AS JSON
+#        return jsonify(data)
+#    except Exception as e:
+#        print(f"Error: {e}")
+#        return jsonify({"error": "Internal Server Error"}), 500
 
 if __name__ == '__main__':
     with app.app_context():

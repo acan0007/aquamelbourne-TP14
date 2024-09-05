@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollutant Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Pollutant Data Charts</h1>
+
+    <h2>Bar Chart: Concentration of a Specific Chemical Across Sites</h2>
+    <canvas id="barChart"></canvas>
+
+    <h2>Pie Chart: Proportion of Different Nitrogen Compounds</h2>
+    <canvas id="pieChart"></canvas>
+
+    <h2>Line Chart: Tracking Changes in Nitrogen Over Time</h2>
+    <canvas id="lineChart"></canvas>
+
+    <script src="/static/js/pollutant_charts.js"></script>
+</body>
+</html>
