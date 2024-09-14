@@ -10,6 +10,8 @@
     <style>
       /* Map section */
       #map {
+        height: 50vh;
+        min-height: 300px;
         position: relative;
         flex: 1;
         height: 800px; /* Adjust the height as needed */
@@ -79,7 +81,11 @@
               <a class="nav-link" href="/#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/#projects">Features</a>
+              <a class="nav-link" href="/#projects">Water Insights</a>
+            </li>
+            <li class="nav-item">
+            <li class="nav-item">
+              <a class="nav-link" href="/stormwater-dashboard">Stormwater Pits</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/#contact">Contact</a>
@@ -106,25 +112,25 @@
     <!-- Black gap with white text BEFORE the chart -->
     <div class="gap-section">
       <p class="lead">
-        Below is the bar chart displaying the pollutant levels in the water:
+        Real-time water quality data map based on E. Coli levels for each sites:
       </p>
     </div>
 
     <!-- New iframe ABOVE the map (Bar Chart) -->
-    <div id="additional-iframe">
-      <iframe src="/pollutant" title="Additional Information"></iframe>
+    <div id="map">
+      <iframe src="/index2" title="Map"></iframe>
     </div>
 
     <!-- Black gap with white text BEFORE the map -->
     <div class="gap-section">
       <p class="lead">
-        Below is the map showing real-time water quality data:
+        Bar chart displaying the average E. Coli levels in the water for each sites:
       </p>
     </div>
 
     <!-- Map section -->
-    <div id="map">
-      <iframe src="/index2" title="Map"></iframe>
+    <div id="additional-iframe">
+      <iframe src="/pollutant" title="Chart"></iframe>
     </div>
 
     <!-- Footer -->

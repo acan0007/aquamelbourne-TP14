@@ -86,8 +86,19 @@ def realmonitor():
 
 # Placeholder
 @app.route('/pollutant', methods=['GET'])
+@login_required
 def pollutant():
     return send_from_directory('static', 'pollutant.html')
+
+# Stormwater
+@app.route('/stormwater', methods=['GET'])
+def stormwater():
+    return send_from_directory('static','stormwater.html')
+
+# Stormwater Dashboard
+@app.route('/stormwater-dashboard', methods=['GET'])
+def stormwater_dashboard():
+    return send_from_directory('static','stormwater-dashboard.html')
 
 # Function to fetch E. Coli relation from RDB
 @app.route('/heatmap_data', methods=['GET'])

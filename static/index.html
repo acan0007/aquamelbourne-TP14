@@ -58,7 +58,10 @@
               <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Features</a>
+              <a class="nav-link" href="#projects">Water Insights</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/stormwater-dashboard">Stormwater Pits</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -101,7 +104,12 @@
             </p>
           </div>
         </div>
-        <img class="img-fluid" src="/static/assets/img/5.png" alt="..."  style="box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);"/>
+        <!-- Spline animation placed below the text -->
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-lg-12">
+            <spline-viewer url="https://prod.spline.design/xGpGfyBUGjKCqwc6/scene.splinecode"></spline-viewer>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -245,5 +253,16 @@
     <!-- Core theme JS-->
     <script src="/static/js/scripts.js"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- Spline animation -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
+    <script>
+      window.onload = function() {
+          var shadowRoot = document.querySelector('spline-viewer').shadowRoot;
+          var logo = shadowRoot.querySelector('#logo');
+          if (logo) {
+              logo.remove();
+          }
+      }
+    </script>
   </body>
 </html>
