@@ -8,21 +8,21 @@
     <title>Aquamelbourne | Stormwater Dashboard</title>
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
     <style>
-    /* Map styling */
-      .map-container {
-        background-color: black; 
-        padding: 50px 0; 
+      /* Map section */
+      #map {
+        height: 50vh;
+        min-height: 300px;
+        position: relative;
+        flex: 1;
+        height: 800px; /* Adjust the height as needed */
+        width: 100%;
       }
 
-      #map {
-        height: 80vh;
-        min-height: 400px; 
-        max-height: 600px; 
-        position: relative;
-        width: 90%; 
-        max-width: 1500px; 
-        margin: 0 auto; 
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
+      /* Bar chart iframe */
+      #additional-iframe {
+        margin-bottom: 0; /* Remove gap since we will create a custom gap below */
+        width: 100%;
+        height: 150vh; /* Extend the chart across the entire visible height */
       }
 
       iframe {
@@ -36,7 +36,7 @@
         background-color: black;
         color: white;
         text-align: center;
-        padding: 50px 0; 
+        padding: 50px 0; /* Adjust padding as needed */
       }
 
       /* Footer styling */
@@ -80,14 +80,8 @@
             <li class="nav-item">
               <a class="nav-link" href="/#about">About</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="waterInsightsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Water Insights
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="waterInsightsDropdown">
-                <li><a class="dropdown-item" href="/projects">Water Quality Dashboard</a></li>
-                <li><a class="dropdown-item" href="/articles">Articles</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="/#projects">Water Insights</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/stormwater-dashboard">Stormwater Pits</a>
@@ -105,9 +99,9 @@
       <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
           <div class="text-center">
-            <h1 class="mx-auto my-0 text-uppercase" style="font-size: 4.0rem;">Stormwater Pit Locations Monitoring Dashboard</h1>
+            <h1 class="mx-auto my-0 text-uppercase" style="font-size: 4.0rem;">Real-Time Stormwater Pit Locations Monitoring</h1>
             <h2 class="text-white-50 mx-auto mt-2 mb-5">
-              A dedicated section where users can view stormwater location and data
+              A dedicated section where users can view stormwater data
             </h2>
           </div>
         </div>
@@ -121,11 +115,9 @@
       </p>
     </div>
 
-    <!-- Map Section with black background -->
-    <div class="map-container">
-      <div id="map">
-        <iframe src="/stormwater" title="Map"></iframe>
-      </div>
+    <!-- Stormwater Map -->
+    <div id="map">
+      <iframe src="/stormwater" title="Map"></iframe>
     </div>
 
     <!-- Footer -->

@@ -8,21 +8,32 @@
     <title>Aquamelbourne | Real-Time Water Quality Monitoring</title>
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
     <style>
-      /* Map section */
+      /* General Container Styling*/
+      .map-container, .chart-container {
+        background-color: black; /* Background around the content */
+        padding: 50px 0; /* Padding to give space above and below */
+        text-align: center;
+        width: 100%; /* Ensure containers extend full width */
+      }
+
+      /* Map */
       #map {
-        height: 50vh;
-        min-height: 300px;
+        height: 80vh;
+        min-height: 400px; /* Min Height*/
+        max-height: 600px; /* Max height */
         position: relative;
-        flex: 1;
-        height: 800px; /* Adjust the height as needed */
-        width: 100%;
+        width: 80%; /* Width to prevent it from touching the sides */
+        max-width: 1400px; /* Set a max-width to control the size */
+        margin: 0 auto; /* Center the map horizontally */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       /* Bar chart iframe */
       #additional-iframe {
-        margin-bottom: 0; /* Remove gap since we will create a custom gap below */
-        width: 100%;
-        height: 150vh; /* Extend the chart across the entire visible height */
+        height: 120vh;
+        position: relative;
+        width: 80%; /* Chart Width */
+        border: none;
       }
 
       iframe {
@@ -36,7 +47,7 @@
         background-color: black;
         color: white;
         text-align: center;
-        padding: 50px 0; /* Adjust padding as needed */
+        padding: 50px 0;
       }
 
       /* Footer styling */
@@ -80,12 +91,17 @@
             <li class="nav-item">
               <a class="nav-link" href="/#about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/#projects">Water Insights</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="waterInsightsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Water Insights
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="waterInsightsDropdown">
+                <li><a class="dropdown-item" href="/projects">Water Quality Dashboard</a></li>
+                <li><a class="dropdown-item" href="/articles">Articles</a></li>
+              </ul>
             </li>
             <li class="nav-item">
-            <li class="nav-item">
-              <a class="nav-link" href="/stormwater-dashboard">Stormwater Pits</a>
+              <a class="nav-link" href="/#pits">Stormwater Pits</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/#contact">Contact</a>
@@ -95,7 +111,7 @@
       </div>
     </nav>
 
-    <!-- Masthead (Keep any images, content, etc. here) -->
+    <!-- Masthead -->
     <header class="masthead">
       <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
@@ -109,28 +125,30 @@
       </div>
     </header>
 
-    <!-- Black gap with white text BEFORE the chart -->
-    <div class="gap-section">
-      <p class="lead">
-        Real-time water quality data map based on E. Coli levels for each sites:
-      </p>
-    </div>
-
-    <!-- New iframe ABOVE the map (Bar Chart) -->
-    <div id="map">
-      <iframe src="/index2" title="Map"></iframe>
-    </div>
-
     <!-- Black gap with white text BEFORE the map -->
     <div class="gap-section">
       <p class="lead">
-        Bar chart displaying the average E. Coli levels in the water for each sites:
+        <strong>Below is the map showing real-time water quality data:</strong><br><br>
       </p>
     </div>
 
-    <!-- Map section -->
-    <div id="additional-iframe">
-      <iframe src="/pollutant" title="Chart"></iframe>
+    <!-- Map Section -->
+    <div class="map-container">
+      <div id="map">
+        <iframe src="/index2" title="Map"></iframe>
+      </div>
+    </div>
+
+    <!-- Black gap with white text BEFORE the bar chart -->
+    <div class="gap-section">
+      <p class="lead">
+        Below is the bar chart displaying the pollutant levels in the water:
+      </p>
+    </div>
+
+    <!-- Bar Chart Section -->
+    <div class="chart-container">
+      <iframe id="additional-iframe" src="/pollutant" title="Bar Chart"></iframe>
     </div>
 
     <!-- Footer -->
