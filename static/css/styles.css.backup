@@ -83,10 +83,6 @@
   --bs-highlight-bg: #faf4e0;
 }
 
-#projects {
-  padding-top: 40px; /* Reduces the padding at the top of the projects section */
-}
-
 *,
 *::before,
 *::after {
@@ -499,7 +495,7 @@ progress {
 }
 
 .lead {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 300;
 }
 
@@ -1325,7 +1321,6 @@ progress {
   .col-lg-12 {
     flex: 0 0 auto;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   .offset-lg-0 {
     margin-left: 0;
@@ -11083,7 +11078,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
 }
 .masthead h1, .masthead .h1 {
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -11208,13 +11202,6 @@ body {
   color: #fff;
 }
 
-.left-align {
-  text-align: left; 
-  padding-left: 200px;
-}
-
 .footer {
   padding: 5rem 0;
-  margin-top: 0;
 }
-

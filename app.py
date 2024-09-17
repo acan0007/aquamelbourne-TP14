@@ -92,13 +92,27 @@ def pollutant():
 
 # Stormwater
 @app.route('/stormwater', methods=['GET'])
+@login_required
 def stormwater():
     return send_from_directory('static','stormwater.html')
 
 # Stormwater Dashboard
 @app.route('/stormwater-dashboard', methods=['GET'])
+@login_required
 def stormwater_dashboard():
     return send_from_directory('static','stormwater-dashboard.html')
+
+# Nitrogen
+@app.route('/nitrogen', methods=['GET'])
+@login_required
+def nitrogen():
+    return send_from_directory('static','nitrogen.html')
+
+# Nitrogen Dashboard
+@app.route('/nitrogen-dashboard', methods=['GET'])
+@login_required
+def nitrogen_dashboard():
+    return send_from_directory('static','nitrogen_dashboard.html')
 
 # Function to fetch E. Coli relation from RDB
 @app.route('/heatmap_data', methods=['GET'])
@@ -113,6 +127,68 @@ def heatmap_data():
 
         # return data as JSON
         return jsonify(data)
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({"error": "Internal Server Error"}), 500
+
+# Function to fetch Nitrogen Total relation from RDB
+@app.route('/nitrogen_data', methods=['GET'])
+def nitrogen_data():
+    try:
+        # FETCH NITROGEN DATA FROM DB
+        query = text('SELECT "Site ID", "Name", "Datetime", "Value", "Unit of Measurement", "WaterQuality", "WGS84_LONG", "WGS84_LAT", "WGS84_LONG_N", "WGS84_LAT_E" FROM nitrogen_total')
+        results = db.session.execute(query).fetchall()
+
+        # CONVERT THE QUERY RESULTS TO A LIST OF DICT
+        data = [{
+            "Site ID": row[0], 
+            "Name": row[1], 
+            "Datetime": row[2].isoformat() if hasattr(row[2], 'isoformat') else row[2],  # Handle datetime formatting
+            "Value": row[3], 
+            "Unit of Measurement": row[4], 
+            "WaterQuality": row[5], 
+            "WGS84_LONG": row[6], 
+            "WGS84_LAT": row[7], 
+            "WGS84_LONG_N": row[8], 
+            "WGS84_LAT_E": row[9]
+        } for row in results]
+
+        # Return the data as JSON
+        return jsonify(data)
+
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({"error": "Internal Server Error"}), 500
+
+# Function to fetch Stormwater Pits relation from RDB
+@app.route('/stormwater_pits_data', methods=['GET'])
+def stormwater_pits_data():
+    try:
+        # FETCH STORMWATER PITS DATA FROM DB
+        query = text('''
+            SELECT "asset_number", "asset_description", "construction_material_lupvalue", 
+                   "grate_length", "grate_width", "grate_material_lupvalue", 
+                   "lat", "lon", "location"
+            FROM stormwater_pits
+        ''')
+        results = db.session.execute(query).fetchall()
+
+        # CONVERT THE QUERY RESULTS TO A LIST OF DICT
+        data = [{
+            "asset_number": row[0],
+            "asset_description": row[1],
+            "construction_material_lupvalue": row[2],
+            "grate_length": row[3],
+            "grate_width": row[4],
+            "grate_material_lupvalue": row[5],
+            "lat": row[6],
+            "lon": row[7],
+            "location": row[8]
+        } for row in results]
+
+        # Return the data as JSON
+        return jsonify(data)
+
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": "Internal Server Error"}), 500
