@@ -1,5 +1,11 @@
 import os
+from dotenv import load_dotenv
+
+# Load environment variable from .env file
+load_dotenv()
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'postgresql://acan0007:R4skr_123@localhost:5432/aquamelbournedb')
+    SECRET_KEY = os.getenv('SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    PASSWORD = os.getenv('PASSWORD')

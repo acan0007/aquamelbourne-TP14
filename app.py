@@ -1,21 +1,33 @@
-from flask import Flask, request, jsonify, send_from_directory, session, redirect, url_for
+from flask import Flask, request, jsonify, session, redirect, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from config import Config
 from functools import wraps
+import os
+from flask_wtf.csrf import CSRFProtect
+from datetime import timedelta
+from werkzeug.middleware.proxy_fix import ProxyFix
 
-# Configuration settings
+# Configuration settings (Initialize Flask app)
 app = Flask(__name__)
 app.config.from_object(Config)
-app.secret_key = 'secret_aquamelb_h3h3#'
+
+# Enable CSRF Protection
+csrf = CSRFProtect(app)
+
+#Database setup
 db = SQLAlchemy(app)
 
-PASSWORD = '5ecr3t_aquamelb#'
+# setting session parameters
+app.config['SESSION_COOKIE_SECURE'] = True  # Ensure cookies are only sent over HTTPS
+app.config['SESSION_COOKIE_HTTPONLY'] = True  # Prevent access to cookies via JavaScript
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  # Protect against CSRF
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30) # Set session lifetime
 
-# Create test database to check whether PostgreSQL is running
-class TestModel(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.String(120), nullable=False)
+# Define session lifetime
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
 
 # Authentication Handler
 def login_required(f):
@@ -26,31 +38,32 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-# Add test data into the test database
-@app.route('/data', methods=['POST'])
-def add_data():
-    data = request.json['data']
-    new_entry = TestModel(data=data)
-    db.session.add(new_entry)
-    db.session.commit()
-    return jsonify({"message": "Data added!"})
+# Set security headers from environment variables
+@app.after_request
+def set_security_headers(response):
+    # X-XSS-Protection: Enables the browser's built-in XSS filter
+    response.headers['X-XSS-Protection'] = os.getenv('X_XSS_PROTECTION', '1; mode=block')
 
-@app.route('/data', methods=['GET'])
-def get_data():
-    all_data = TestModel.query.all()
-    result = [{"id": entry.id, "data": entry.data} for entry in all_data]
-    return jsonify(result)
+    # X-Content-Type-Options: Prevents browsers from interpreting files as a different MIME type
+    response.headers['X-Content-Type-Options'] = os.getenv('X_CONTENT_TYPE_OPTIONS', 'nosniff')
+
+    # X-Frame-Options: Prevents clickjacking attacks
+    response.headers['X-Frame-Options'] = os.getenv('X_FRAME_OPTIONS', 'SAMEORIGIN')
+
+    return response
 
 # Login / authentication page endpoint route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        if request.form['password'] == PASSWORD:
+        if request.form['password'] == app.config['PASSWORD']:
             session['authenticated'] = True
+            app.logger.info('CSRF token validation successful')
             return redirect(url_for('index'))
         else:
-            return redirect(url_for('login', error="Invalid password, please try again."))
-    return send_from_directory('static', 'login.html')
+           app.logger.info('Invalid password attempt') 
+           return redirect(url_for('login', error="Invalid password, please try again."))
+    return render_template('login.html')
 
 # Landing page (Home page) endpoint route
 @app.route('/', methods=['GET'])
@@ -58,61 +71,80 @@ def login():
 def index():
     if not session.get('authenticated'):
        return redirect(url_for('login'))
-    return send_from_directory('static', 'index.html')
+    return render_template('index.html')
 
 # Real-time water monitoring map endpoint route
 @app.route('/index2', methods=['GET'])
 @login_required
 def index2():
-    return send_from_directory('static', 'index2.html')
+    return render_template('index2.html')
 
 # Articles page endpoint route
 @app.route('/articles', methods=['GET'])
 @login_required
 def articles():
-    return send_from_directory('static', 'articles.html')
+    return render_template('articles.html')
 
 # Real-time water monitoring page endpoint route
 @app.route('/projects', methods=['GET'])
 @login_required
 def projects():
-    return send_from_directory('static', 'projects.html')
+    return render_template('projects.html')
 
 # Placeolder
 @app.route('/realmonitor', methods=['GET'])
 @login_required
 def realmonitor():
-    return send_from_directory('static', 'realmonitor.html')
+    return render_template('realmonitor.html')
 
 # Placeholder
 @app.route('/pollutant', methods=['GET'])
 @login_required
 def pollutant():
-    return send_from_directory('static', 'pollutant.html')
+    return render_template('pollutant.html')
 
 # Stormwater
 @app.route('/stormwater', methods=['GET'])
 @login_required
 def stormwater():
-    return send_from_directory('static','stormwater.html')
+    return render_template('stormwater.html')
 
 # Stormwater Dashboard
 @app.route('/stormwater-dashboard', methods=['GET'])
 @login_required
 def stormwater_dashboard():
-    return send_from_directory('static','stormwater-dashboard.html')
+    return render_template('stormwater-dashboard.html')
 
 # Nitrogen
 @app.route('/nitrogen', methods=['GET'])
 @login_required
 def nitrogen():
-    return send_from_directory('static','nitrogen.html')
+    return render_template('nitrogen.html')
 
 # Nitrogen Dashboard
 @app.route('/nitrogen-dashboard', methods=['GET'])
 @login_required
 def nitrogen_dashboard():
-    return send_from_directory('static','nitrogen_dashboard.html')
+    return render_template('nitrogen_dashboard.html')
+
+# Custom 404 error handler
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+# Water Supply Dashboard
+@app.route('/water', methods=['GET'])
+def water():
+    return render_template('water.html')
+
+# Water Supply Dashboard
+@app.route('/water-supply', methods=['GET'])
+def water_supply():
+    return render_template('water_supply.html')
+
+@app.route('/data-table', methods=['GET'])
+def data_table():
+    return send_from_directory('dataset','data.xlsx')
 
 # Function to fetch E. Coli relation from RDB
 @app.route('/heatmap_data', methods=['GET'])
@@ -193,26 +225,7 @@ def stormwater_pits_data():
         print(f"Error: {e}")
         return jsonify({"error": "Internal Server Error"}), 500
 
-# Function to fetch pollutant data from RDB
-#@app.route('/pollutant_data', methods=['GET'])
-#def pollutant_data():
-#    try:
-#        # FETCH DATA FROM DB FOR PATTERSON RIVER
-#        query = text('''
-#            SELECT "site_name_short", "date", "N_TOTAL", "N_NH3", "N_NO2", "N_NO3", "DO_mg", "Temp"
-#            FROM site_name
-#            WHERE "site_name_short" = :site_name
-#        ''')
-#        results = db.session.execute(query, {'site_name': 'Patterson River'}).fetchall()
-#
-#        # CONVERT THE QUERY RESULTS TO A LIST OF DICT
-#        data = [{"site_name_short": row[0], "date": row[1].isoformat(), "N_TOTAL": row[2], "N_NH3": row[3], "N_NO2": row[4], "N_NO3": row[5], "DO_mg": row[6], "Temp": row[7]} for row in results]
-#
-#        # RETURN DATA AS JSON
-#        return jsonify(data)
-#    except Exception as e:
-#        print(f"Error: {e}")
-#        return jsonify({"error": "Internal Server Error"}), 500
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 if __name__ == '__main__':
     with app.app_context():

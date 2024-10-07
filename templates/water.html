@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Data Visualization - Victoria</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<body>
+<div id="container" style="width:100%; height:600px;"></div>
+<button onclick="updateChart('Consumption')">Consumption and Use</button>
+<button onclick="updateChart('Expenditure')">Expenditure</button>
+<button onclick="updateChart('Rainfall')">Rainfall and Dam Storage</button>
+
+<script>
+const data = {
+    'Consumption': {
+        industryUse: [12159082, 11923306, 11282234, 12146701, 11844883, 10416582, 10973383, 10919967],
+        householdUse: [374383, 399571, 389607, 399167, 418648, 414802, 420807, 419868]
+    },
+    'Expenditure': {
+        industryExp: [775, 884, 791, 900, 983, 648, 669, 703],
+        householdExp: [1201, 1247, 1228, 1239, 1375, 1391, 1368, 1346]
+    },
+    'Rainfall': {
+        rainfall: [511, 547, 713, 568, 516, 583, 638, 719],
+        damStorage: [7203203, 5259401, 8513287, 7878058, 5712029, 6440506, 7709148, 10489962]
+    }
+};
+
+const years = ['2014-15', '2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22'];
+
+let chart;  // Declare the chart variable globally
+
+function renderChart(type, seriesData, yAxisConfig, title) {
+    // Destroy the existing chart if it exists
+    if (chart) {
+        chart.destroy();
+    }
+
+    // Create a new chart with the updated data and tooltip formatters for units
+    chart = Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: title  // Set the title dynamically
+        },
+        xAxis: {
+            categories: years
+        },
+        yAxis: yAxisConfig, // Configured dynamically
+        series: seriesData,   // Series data to be dynamically updated
+        tooltip: {
+            formatter: function () {
+                let unit = '';
+                if (this.series.name.includes('Water Use')) {
+                    unit = ' ML';
+                } else if (this.series.name.includes('Expenditure')) {
+                    unit = ' $m';
+                } else if (this.series.name.includes('Rainfall')) {
+                    unit = ' mm';
+                } else if (this.series.name.includes('Dam Storage')) {
+                    unit = ' ML';
+                }
+                return '<b>' + this.series.name + '</b><br/>' + this.x + ': ' + this.y + unit;
+            }
+        }
+    });
+}
+
+function updateChart(type) {
+    if (type === 'Consumption') {
+        renderChart('Water Use by Industry and Households', [{
+            name: 'Industry Water Use',
+            data: data['Consumption'].industryUse,
+            type: 'column',
+            color: '#6699CC',
+            yAxis: 0
+        }, {
+            name: 'Household Water Use',
+            data: data['Consumption'].householdUse,
+            type: 'spline',
+            color: '#336699',
+            yAxis: 1
+        }], [{
+            title: { text: 'Industry Water Use (ML)' },
+            opposite: false
+        }, {
+            title: { text: 'Household Water Use (ML)' },
+            opposite: true
+        }], 'Water Use by Industry and Households');
+    } else if (type === 'Expenditure') {
+        renderChart('Expenditure by Industry and Households', [{
+            name: 'Industry Expenditure',
+            data: data['Expenditure'].industryExp,
+            type: 'column',
+            color: '#6699CC',
+            yAxis: 0
+        }, {
+            name: 'Household Expenditure',
+            data: data['Expenditure'].householdExp,
+            type: 'spline',
+            color: '#336699',
+            yAxis: 1
+        }], [{
+            title: { text: 'Industry Expenditure ($m)' },
+            opposite: false
+        }, {
+            title: { text: 'Household Expenditure ($m)' },
+            opposite: true
+        }], 'Expenditure by Industry and Households');
+    } else if (type === 'Rainfall') {
+        renderChart('Area-average Rainfall and Major Dam Storage', [{
+            name: 'Rainfall',
+            data: data['Rainfall'].rainfall,
+            type: 'column',
+            color: '#6699CC',
+            yAxis: 0
+        }, {
+            name: 'Dam Storage',
+            data: data['Rainfall'].damStorage,
+            type: 'spline',
+            color: '#336699',
+            yAxis: 1
+        }], [{
+            title: { text: 'Rainfall (mm)' },
+            opposite: false
+        }, {
+            title: { text: 'Dam Storage (ML)' },
+            opposite: true
+        }], 'Area-average Rainfall and Major Dam Storage');
+    }
+}
+
+// Initialize the chart to display 'Consumption' on load
+updateChart('Consumption');
+</script>
+</body>
+</html>

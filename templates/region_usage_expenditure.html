@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Region Water Usage and Expenditure Visualization</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<body>
+<div id="container" style="width:100%; height:600px;"></div>
+<button onclick="updateChart('New South Wales')">New South Wales</button>
+<button onclick="updateChart('Victoria')">Victoria</button>
+<button onclick="updateChart('Queensland')">Queensland</button>
+<button onclick="updateChart('South Australia')">South Australia</button>
+<button onclick="updateChart('Western Australia')">Western Australia</button>
+<button onclick="updateChart('Tasmania')">Tasmania</button>
+<button onclick="updateChart('Northern Territory')">Northern Territory</button>
+<button onclick="updateChart('Australian Capital Territory')">Australian Capital Territory</button>
+
+<script>
+const data = {
+    'New South Wales': {
+        waterUse: [21693801.89, 19908644.83, 23677750.63, 22784565.89, 16767624.19, 12893285.30, 20156041.03, 22175816.70],
+        expenditure: [2089.06, 2154.94, 2152.24, 2281.67, 2214.01, 2174.93, 2165.03, 2160.25]
+    },
+    'Victoria': {
+        waterUse: [12533466, 12322877, 11671841, 12545868, 12263532, 10831383, 11394190, 11339836],
+        expenditure: [1976, 2132, 2020, 2138, 2358, 2039, 2037, 2049]
+    },
+    'Queensland': {
+        waterUse: [7713896, 7355326, 6999119, 7106098, 6126357, 6577805, 6923857, 7389324],
+        expenditure: [2041, 2106, 2183, 2252, 2347, 2492, 2618, 2630]
+    },
+    'South Australia': {
+        waterUse: [1637302, 1763047, 1423502, 1547938, 1608287, 1736150, 1782539, 1677397],
+        expenditure: [827, 894, 781, 862, 925, 926, 772, 781]
+    },
+    'Western Australia': {
+        waterUse: [4252657, 4316653, 4329219, 4434089, 4687963, 4626895, 3974515, 3667400],
+        expenditure: [897, 954, 954, 1009, 1096, 1146, 1140, 1185]
+    },
+    'Tasmania': {
+        waterUse: [33338831, 31508624, 35967920, 36764580, 36843276, 41280838, 33659751, 34254002],
+        expenditure: [140, 139, 136, 144, 151, 150, 158, 165]
+    },
+    'Northern Territory': {
+        waterUse: [254369, 230900, 265752, 258637, 244775, 240479, 256519, 239176],
+        expenditure: [113, 120, 114, 116, 121, 122, 113, 120]
+    },
+    'Australian Capital Territory': {
+        waterUse: [121906, 128859, 128385, 127298, 133487, 139449, 136176, 133352],
+        expenditure: [157, 168, 162, 178, 168, 190, 165, 158]
+    }
+};
+
+const chart = Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Water Usage and Expenditure by Region'
+    },
+    xAxis: {
+        categories: ['2014-15', '2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2021-22']
+    },
+    yAxis: [{
+        title: {
+            text: 'Expenditure ($m)',
+            style: {
+                color: '#336699'  // Darker blue for expenditure axis and line
+            }
+        },
+        labels: {
+            format: '${value} m',
+            style: {
+                color: '#336699'  // Darker blue labels
+            }
+        },
+        opposite: false  // Expenditure on the left side
+    }, {
+        title: {
+            text: 'Water Usage (ML)',
+            style: {
+                color: '#6699CC'  // Grey-blue for water usage axis and bars
+            }
+        },
+        labels: {
+            format: '{value} ML',
+            style: {
+                color: '#6699CC'  // Grey-blue labels
+            }
+        },
+        opposite: true   // Water Usage on the right side
+    }],
+    series: [{
+        name: 'Expenditure',
+        type: 'spline',
+        yAxis: 0,  // Expenditure corresponds to the left y-axis
+        data: data['New South Wales'].expenditure,
+        color: '#336699',  // Darker blue for the line
+        lineWidth: 3,      // Ensure the line stands out
+        tooltip: {
+            valuePrefix: '$'
+        },
+        zIndex: 2  // Ensure the line is in front of the bars
+    }, {
+        name: 'Water Usage',
+        type: 'column',
+        color: '#6699CC',  // Set color to grey-blue for water usage bars
+        yAxis: 1,  // Water Usage corresponds to the right y-axis
+        data: data['New South Wales'].waterUse,
+        tooltip: {
+            valueSuffix: ' ML'
+        },
+        zIndex: 1  // Ensure the bars are behind the line
+    }]
+});
+
+function updateChart(region) {
+    chart.series[0].update({
+        name: 'Expenditure - ' + region,
+        data: data[region].expenditure,
+        color: '#336699'  // Keep the color for darker blue when updating regions
+    });
+    chart.series[1].update({
+        name: 'Water Usage - ' + region,
+        data: data[region].waterUse,
+        color: '#6699CC'  // Keep the color for grey-blue bars
+    });
+    chart.setTitle({ text: 'Water Usage and Expenditure for ' + region });
+}
+</script>
+</body>
+</html>

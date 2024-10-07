@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Aquamelbourne | Articles</title>
+  <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/static/css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/#about">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#projects" id="waterInsightsDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Water Insights
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="waterInsightsDropdown">
+              <li><a class="dropdown-item" href="/projects">Water Quality Dashboard</a></li>
+              <li><a class="dropdown-item" href="/articles">Articles</a></li>
+              <li><a class="dropdown-item" href="/nitrogen-dashboard">Nitrogen Pollution</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stormwater-dashboard">Stormwater Pits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Masthead-->
+  <header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+      <div class="d-flex justify-content-center">
+        <div class="text-center">
+          <h1 class="mx-auto my-0 text-uppercase" style="font-size: 3.5rem;">Articles</h1>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">
+            Explore our curated selection of articles focused on the intersection of urban development and environmental
+            preservation in Melbourne.
+          </h2>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Articles Section -->
+  <!-- First Row -->
+  <section id="features-section" class="py-5" style="background-color: transparent; padding: 20px">
+    <div class="container">
+      <!-- Article Example -->
+      <div class="row align-items-center mb-5 text-center justify-content-center">
+        <div class="col-md-3 d-flex justify-content-center">
+          <div class="card mx-auto border-0 bg-transparent shadow-none"
+            style="width: 250px; height: 250px; overflow: hidden">
+            <img src="/static/assets/img/11.png" class="img-fluid w-100 h-100" alt="Water Quality Image"
+              style="object-fit: cover" />
+          </div>
+        </div>
+        <div class="col-md-9 d-flex flex-column justify-content-center">
+          <h5 class="card-title mt-3 fw-bold">
+            Water quality in Port Phillip Bay still recovering after Victoria's record floods
+          </h5>
+          <p class="card-text">
+            Water quality in Port Phillip Bay has hit a near-decade low in the wake of record rainfall, but is
+            quickly bouncing back, environmental authorities say.
+          </p>
+          <!-- Expandable Content -->
+          <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#article1" aria-expanded="false"
+            aria-controls="article1">
+            Read More
+          </button>
+          <div class="collapse" id="article1">
+            <div class="card card-body mt-3">
+              <p class="card-text">
+                Water quality in Port Phillip Bay has hit a near-decade low in the wake of record rainfall, but is
+                quickly bouncing back, environmental authorities say.<br>
+
+                Key points:<br>
+
+                The drop in water quality has been caused by record rainfall in October and November<br>
+                The EPA said there was anecdotal evidence of some sickness linked to the poor water quality
+                But the bay is already making a quick recovery as the weather improves<br>
+                Elevated amounts of trace metals, pesticides and E. coli were detected in the bay in the latest
+                water quality reporting period, the Environment Protection Authority (EPA) said on Wednesday.<br>
+
+                Between 2013 and 2021, water quality in December met environmental standards around 90 per cent of
+                the time across 36 bayside beaches monitored by the EPA.<br>
+
+                But that plunged to around 77 per cent in December 2022.<br>
+
+                "It's actually worse than what it's been for previous years," EPA Victoria chief environmental
+                scientist Mark Patrick Taylor said.<br>
+
+                "All the rain in late spring and early summer have flushed contaminants from streams and parks and
+                roadways into the water system," he said.<br>
+
+              </p>
+              <p class="card-text fw-semibold text-decoration-underline">
+                Lenton-Williams, G. (2023, January 4). Water quality in Port Phillip Bay still recovering after
+                Victoria’s record floods. ABC News.
+                <a href="https://www.abc.net.au/news/2023-01-05/victoria-beach-bay-water-quality-epa-melbourne-floods/101826148"
+                  target="_blank">Link</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- First Row -->
+    <section id="features-section" class="py-5" style="background-color: transparent; padding: 20px">
+      <div class="container">
+        <!-- Article Example -->
+        <div class="row align-items-center mb-5 text-center justify-content-center">
+          <div class="col-md-3 d-flex justify-content-center">
+            <div class="card mx-auto border-0 bg-transparent shadow-none"
+              style="width: 250px; height: 250px; overflow: hidden">
+              <img src="/static/assets/img/55.png" class="img-fluid w-100 h-100" alt="Water Quality Image"
+                style="object-fit: cover" />
+            </div>
+          </div>
+          <div class="col-md-9 d-flex flex-column justify-content-center">
+            <h5 class="card-title mt-3 fw-bold">
+              Melbourne suburbs served by Yarra Valley Water, South East Water warned to boil water after wild
+              weather
+            </h5>
+            <p class="card-text">
+              Hundreds of thousands of households across Melbourne's north and east have been told to boil their
+              water after storms on
+              Thursday caused electrical damage which resulted in contamination.
+            </p>
+            <!-- Expandable Content -->
+            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#article2" aria-expanded="false"
+              aria-controls="article2">
+              Read More
+            </button>
+            <div class="collapse" id="article2">
+              <div class="card card-body mt-3">
+                <p class="card-text">
+                  Hundreds of thousands of households across Melbourne's north and east have been told to boil
+                  their water after storms on Thursday caused electrical damage which resulted in contamination.
+
+                  Key points:
+                  Yarra Valley Water advised residents of 88 suburbs to boil their water
+                  South East Water later identified another 11 affected suburbs
+                  The companies said the risk of illness was low
+                  Wild weather including winds of up to 124 kilometres per hour caused widespread damage, and
+                  falling trees claimed the lives of three people.
+
+                  The storm also damaged infrastructure, allowing undisinfected water from Silvan Dam, east of
+                  Melbourne, to enter the water supply system.
+
+                  "We've become aware of a potential water quality issue affecting 88 suburbs due to electrical
+                  damage caused by storms overnight," Yarra Valley Water said on its Facebook page.
+
+                  South East Water later identified another 11 suburbs where residents should boil their water
+                  before drinking it as a precautionary measure.
+
+                  "Residents should bring water to a rolling boil before drinking, washing and preparing food,
+                  preparing baby formula, brushing teeth and making ice until further notice," South East Water
+                  said on Facebook.
+
+                  Yarra Valley Water said: "Some water may have entered our drinking water supply network that
+                  had not been treated to the usual standard."
+                </p>
+                <p class="card-text fw-semibold text-decoration-underline">
+                  Clayton, R. (2020, August 28). Melbourne suburbs served by Yarra Valley Water, South East
+                  Water warned to boil water after wild weather. ABC News.
+                  <a href="https://www.abc.net.au/news/2020-08-28/yarra-valley-water-users-told-to-boil-water-after-storms/12605930"
+                  target="_blank">Link</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- First Row -->
+      <section id="features-section" class="py-5" style="background-color: transparent; padding: 20px">
+        <div class="container">
+          <!-- Article Example -->
+          <div class="row align-items-center mb-5 text-center justify-content-center">
+            <div class="col-md-3 d-flex justify-content-center">
+              <div class="card mx-auto border-0 bg-transparent shadow-none"
+                style="width: 250px; height: 250px; overflow: hidden">
+                <img src="/static/assets/img/22.jpg" class="img-fluid w-100 h-100" alt="Water Quality Image"
+                  style="object-fit: cover" />
+              </div>
+            </div>
+            <div class="col-md-9 d-flex flex-column justify-content-center">
+              <h5 class="card-title mt-3 fw-bold">
+                The Environment Reference Standard
+              </h5>
+              <p class="card-text">
+                The Environment Reference Standard (PDF 987KB) is part of the Environment Protection Act
+                2017 and commenced on 1 July 2021.
+                An environmental value is an aspect of the environment and how we use it that is important
+                to us. It is an outcome Victorians want for human health and the environment.
+              </p>
+              <!-- Expandable Content -->
+              <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#article3" aria-expanded="false"
+                aria-controls="article3">
+                Read More
+              </button>
+              <div class="collapse" id="article3">
+                <div class="card card-body mt-3">
+                  <p class="card-text">
+                    About the Environment Reference Standard<br>
+
+                    The Environment Reference Standard (PDF 987KB) is part of the Environment Protection Act
+                    2017 and commenced on 1 July 2021.<br>
+
+                    The ERS:<br>
+
+                    identifies environmental values that the Victorian community want to achieve and
+                    maintain
+                    provides a way to assess those environmental values in locations across Victoria.
+                    About environmental values<br>
+
+                    An environmental value is an aspect of the environment and how we use it that is
+                    important to us. It is an outcome Victorians want for human health and the environment.<br>
+
+                    Examples of environmental values include:<br>
+
+                    clean water to swim in
+                    sound levels that let us sleep at the night
+                    air quality that supports human health and the environment.
+                    What the Environment Reference Standard covers<br>
+
+                    The ERS is itself made up of many reference standards.<br>
+
+                    These reference standards are in groups that cover four aspects of Victoria’s
+                    environment:<br>
+
+                    ambient air<br>
+                    ambient sound<br>
+                    land<br>
+                    water (surface water and groundwater).<br>
+                    Each reference standard identifies an environmental value.<br>
+
+                    Most reference standards also have indicators and objectives. These are how we assess if
+                    the environmental value is being achieved, maintained or threatened.<br>
+
+                    An indicator is something we measure. For example, carbon monoxide is one indicator we
+                    use to measure ambient air quality.<br>
+
+                    An objective is the level of an indicator, or a way of using an indicator, to help us
+                    assess the environmental value. For example, for carbon monoxide (the indicator) in
+                    ambient air, the objective is 9.0 parts per million (maximum concentration).<br>
+
+                    Most objectives have a scientific basis for how we assess them. These objectives are
+                    usually quantitative, which means they are something we can count or measure.<br>
+
+                    A small number of objectives have a descriptive (qualitative) basis for how we assess
+                    them. For example, to assess ambient sound in natural areas it is the kinds of sounds we
+                    hear, not the levels of sound, that are important.<br>
+
+                    The ERS also defines the parts of Victoria that the reference standards relate to.<br>
+
+                    Some standards apply broadly. For example, the ambient air standards relate to all of
+                    Victoria’s ambient air environment. Other standards have environmental values or
+                    objectives that just apply to certain areas.<br>
+
+
+
+                  </p>
+                  <p class="card-text fw-semibold text-decoration-underline">
+                    Victoria, E. P. A. (2024, May 17). The Environment Reference Standard. Environment
+                    Protection Authority Victoria.
+                    <a href="https://www.epa.vic.gov.au/about-epa/laws/compliance-and-directions/environment-reference-standard"
+                  target="_blank">Link</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- First Row -->
+        <section id="features-section" class="py-5" style="background-color: transparent; padding: 20px">
+          <div class="container">
+            <!-- Article Example -->
+            <div class="row align-items-center mb-5 text-center justify-content-center">
+              <div class="col-md-3 d-flex justify-content-center">
+                <div class="card mx-auto border-0 bg-transparent shadow-none"
+                  style="width: 250px; height: 250px; overflow: hidden">
+                  <img src="/static/assets/img/33.jpg" class="img-fluid w-100 h-100" alt="Water Quality Image"
+                    style="object-fit: cover" />
+                </div>
+              </div>
+              <div class="col-md-9 d-flex flex-column justify-content-center">
+                <h5 class="card-title mt-3 fw-bold">
+                  Water pollution
+                </h5>
+                <p class="card-text">
+                  All of the sewage from your house will eventually make its way back into the rivers,
+                  lakes
+                  and the sea.
+                  Did you or any other members of your family read a newspaper, use packaged products or
+                  eat some fresh fruit? All of these things, along with most other things that you use
+                  or eat,
+                  also produce sewage in their production.
+                  The sewage from houses, schools, office buildings, farms and factories contains all
+                  kinds of
+                  chemicals and materials that are not naturally found in our waterways.
+                </p>
+                <!-- Expandable Content -->
+                <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#article4"
+                  aria-expanded="false" aria-controls="article4">
+                  Read More
+                </button>
+                <div class="collapse" id="article4">
+                  <div class="card card-body mt-3">
+                    <p class="card-text">
+                      All of the sewage from your house will eventually make its way back into the
+                      rivers, lakes and the sea.<br>
+
+                      Did you or any other members of your family read a newspaper, use packaged
+                      products or eat some fresh fruit? All of these things, along with most other
+                      things that you use or eat, also produce sewage in their production.<br>
+
+                      The sewage from houses, schools, office buildings, farms and factories contains
+                      all kinds of chemicals and materials that are not naturally found in our
+                      waterways. Some of these chemicals are poisonous and can be dangerous, even in
+                      very small amounts. Others, such as human wastes, are not poisonous but are
+                      produced in such great quantities that natural systems simply can't cope. As a
+                      result, sewage must be purified in some way before it is released into the
+                      environment.<br>
+
+                      Water pollution happens when sewage is not effectively treated before it is
+                      released into the environment. This can happen in many ways, some are accidental,
+                      but others are deliberate.<br>
+
+                      Sources of water pollution<br>
+
+                      Most people are affected in some way by water pollution and we have all read
+                      stories of dead fish and polluted rivers and beaches. However, fewer people are
+                      aware of the many sources of water pollution.<br>
+
+                      Houses<br>
+
+                      Many of the problems faced by sewage treatment plants begin with the material
+                      people tip down the drain or flush down the toilet at home. Treatment plants are
+                      not capable of treating many of these wastes and some pass through the system
+                      untreated.<br>
+
+                      For example, Australian families use vast numbers of feminine hygiene products
+                      each year. Although many of these products are disposed of correctly (in household
+                      rubbish), those that are flushed down the toilet can cause problems by blocking
+                      screens at a treatment plant.<br>
+
+                      Industry, offices and schools<br>
+
+                      As with household sources of water pollution, industry, offices and schools can be
+                      the source of a whole range of materials and chemicals that are carelessly tipped
+                      down the drain. The thoughtless disposal of toxic chemicals is a serious problem
+                      because these chemicals can cause pollution, even if they are in small quantities.<br>
+
+                      Many industries are also allowed to dispose of materials or chemicals into the
+                      sewerage system. However, they must do so under strict guidelines controlled by
+                      the water authorities responsible for the treatment of sewage.<br>
+
+                      Sewers<br>
+
+                      Occasionally pumping stations break down, sewer pipes break or become blocked, and
+                      untreated sewage is released. Luckily these problems are few and far between and
+                      are generally a minor source of water pollution.<br>
+
+
+
+
+
+                    </p>
+                    <p class="card-text fw-semibold text-decoration-underline">
+                      Water pollution | Yarra Valley Water. (n.d.).
+                      <a href="https://www.yvw.com.au/about-us/student-resources/secondary/water-pollution#:~:text=Illegal%20dumping,or%20directly%20into%20the%20environment"
+                  target="_blank">Link</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- First Row -->
+          <section id="features-section" class="py-5" style="background-color: transparent; padding: 20px">
+            <div class="container">
+              <!-- Article Example -->
+              <div class="row align-items-center mb-5 text-center justify-content-center">
+                <div class="col-md-3 d-flex justify-content-center">
+                  <div class="card mx-auto border-0 bg-transparent shadow-none"
+                    style="width: 250px; height: 250px; overflow: hidden">
+                    <img src="/static/assets/img/44.png" class="img-fluid w-100 h-100" alt="Water Quality Image"
+                      style="object-fit: cover" />
+                  </div>
+                </div>
+                <div class="col-md-9 d-flex flex-column justify-content-center">
+                  <h5 class="card-title mt-3 fw-bold">
+                    Community Perceptions of Water in Melbourne in 2019
+                  </h5>
+                  <p class="card-text">
+                    Raw survey data which provides community perceptions of water supply, waterways,
+                    flooding
+                    management, sewerage services, and the water industry in Melbourne, Australia.
+                    This data was collected in June 2019 from 799 residents aged 18+ in the Greater
+                    Melbourne
+                    Region to capture and monitor
+                  </p>
+                  <!-- Expandable Content -->
+                  <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#article5"
+                    aria-expanded="false" aria-controls="article5">
+                    Read More
+                  </button>
+                  <div class="collapse" id="article5">
+                    <div class="card card-body mt-3">
+                      <p class="card-text">
+                        Raw survey data which provides community perceptions of water supply,
+                        waterways, flooding management, sewerage services, and the water industry in
+                        Melbourne, Australia.
+
+                        This data was collected in June 2019 from 799 residents aged 18+ in the
+                        Greater Melbourne Region to capture and monitor:
+                        -Community perceptions and concerns about water in Melbourne
+                        -Awareness and attitudes toward water sources
+                        -Attitude towards water conservation and restrictions
+                        -Water literacy in the community
+                        -Perceptions of Melbourne Water’s brand and industry performance
+                        -Exposure to flood and understanding of flood management and responsible
+                        authorities.
+
+                        NOTE: Whilst every effort has been taken in collecting, validating and
+                        providing the attached data, Melbourne Water Corporation makes no
+                        representations or guarantees as to the accuracy or completeness of this
+                        data. Any person or group that uses this data does so at its own risk and
+                        should make their own assessment and investigations as to the suitability
+                        and/or application of the data. Melbourne Water Corporation shall not be
+                        liable in any way to any person or group for loss of any kind including
+                        damages, costs, interest, loss of profits or special loss or damage, arising
+                        from any use, error, inaccuracy, incompleteness or other defect in this
+                        data.
+
+
+
+                      </p>
+                      <p class="card-text fw-semibold text-decoration-underline">
+                        Community perceptions of water in Melbourne in 2019. (n.d.).
+                        <a href="https://data-melbournewater.opendata.arcgis.com/datasets/1f7bd55e1fd548ec8aa464b8c04e109d/about"
+                  target="_blank">Link</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Article Example -->
+            <div class="row align-items-center mb-5 text-center justify-content-center">
+              <div class="col-md-3 d-flex justify-content-center">
+                <div class="card mx-auto border-0 bg-transparent shadow-none"
+                  style="width: 250px; height: 250px; overflow: hidden">
+                  <img src="/static/assets/img/8.jpg" class="img-fluid w-100 h-100" alt="Water Quality Image"
+                    style="object-fit: cover" />
+                </div>
+              </div>
+              <div class="col-md-9 d-flex flex-column justify-content-center">
+                <h5 class="card-title mt-3 fw-bold">
+                  Melbourne's Port Phillip Bay not suitable for swimming after severe storms
+                </h5>
+                <p class="card-text">
+                  The water quality is poor at almost 40 beaches in Port Phillip Bay following
+                  recent
+                  severe
+                  storms across Victoria.The Environment Protection
+                  Authority (EPA) has warned the water is considered not suitable for swimming.
+                  The EPA
+                  says
+                  it typically takes a few days for the water to clear up but with a growing
+                  population,
+                  the
+                  issue of stormwater run-off is getting bigger.
+                </p>
+                <!-- Expandable Content -->
+                <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#article6"
+                  aria-expanded="false" aria-controls="article6">
+                  Read More
+                </button>
+                <div class="collapse" id="article6">
+                  <div class="card card-body mt-3">
+                    <p class="card-text">
+                      Nothing can stop an Iceberger.
+
+                      They dive into waters as cold as 9 degrees Celsius when the air
+                      temperature isn't much higher.
+
+                      And when the water quality plunges, they'd rather not know.
+
+                      "We swim regardless," said Clive Fraser, who's been a regular cold-water
+                      swimmer at Melbourne's Brighton beach for five years.
+
+                      "Last year was terrible, it tasted powdery on top of your mouth," he said,
+                      referring to the poor quality in the bay after the 2022 flood crisis.
+                      And given he could swim through that, he said the recent dip in quality
+                      from heavy rain wasn't going to stop him.
+
+                      "Some people get skittish about it but us diehards don't. We're too
+                      addicted to it," he said.
+
+                      Recent heavy rain inundating regional Victoria and Melbourne saw water
+                      quality at Port Philip beaches plunge and the Environment Protection
+                      Authority (EPA) warn people to avoid a summer dip for at least a few days.
+
+                      Just over a year ago, water quality in the bay dropped to a 30-year low
+                      after intense flooding around Victoria flushed contaminants from streams,
+                      rivers, parks, roads, and houses into the ocean.
+
+                      What is the current health of the bay?
+
+                      For the past two days, since unseasonable Christmas thunderstorms battered
+                      the state, most of the beaches from Phillip Island all the way around to
+                      Geelong had been marked 'poor' by the EPA — meaning people should avoid
+                      going in the water at all.
+
+                      The bacteria E. coli is one of the biggest concerns as when ingested it
+                      can cause stomach cramps, diarrhoea and vomiting.
+                    </p>
+                    <p class="card-text fw-semibold text-decoration-underline">
+                      Clayton, R. (2023, December 28). Melbourne’s Port Phillip Bay not suitable
+                      for
+                      swimming
+                      after severe storms. ABC News.
+                      <a href="https://www.abc.net.au/news/2023-12-29/melbourne-bays-poor-water-quality-explainer/103269472"
+                  target="_blank">Link</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>
+
+        </section>
+
+        <!-- Custom CSS for hover effect -->
+        <style>
+          .article-link:hover .card-title,
+          .article-link:hover .card-text,
+          .article-link:hover img {
+            color: #2d77c6;
+            transform: scale(1.05);
+            transition: transform 0.3s ease, color 0.3s ease;
+          }
+
+          .article-row:hover {
+            border-radius: 12px;
+            border: solid 1px #000;
+            padding: 10px;
+          }
+        </style>
+
+        <!-- Footer-->
+         <!-- Contact-->
+    <section class="contact-section bg-black" id="contact">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Address</h4>
+                <hr class="my-4 mx-auto" />
+                <div class="small text-black-50">
+                  Wellington Rd, Clayton, VIC 3800 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-envelope text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Email</h4>
+                <hr class="my-4 mx-auto" />
+                <div class="small text-black-50">
+                  <a href="#!">aquamelbourne@gmail.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Phone</h4>
+                <hr class="my-4 mx-auto" />
+                <div class="small text-black-50">+(03) 9905 4000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social d-flex justify-content-center">
+          <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+          <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+          <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+      <div class="container px-4 px-lg-5">
+        Copyright &copy; Aqua Melbourne 2024
+
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/static/js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+
+</html>
