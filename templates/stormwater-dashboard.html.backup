@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Aquamelbourne | Stormwater Pits</title>
+  <title>Aquamelbourne | Home</title>
   <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -20,6 +20,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
   <link href="/static/css/styles.css" rel="stylesheet" />
+  <link href="/static/css/cardfillping.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -36,21 +37,24 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/#about">About</a>
+            <a class="nav-link" href="//#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/articles">Articles</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#projects" id="waterInsightsDropdown" role="button"
+            <a class="nav-link dropdown-toggle" href="" id="waterInsightsDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Water Insights
             </a>
             <ul class="dropdown-menu" aria-labelledby="waterInsightsDropdown">
               <li><a class="dropdown-item" href="/projects">Water Quality Dashboard</a></li>
-              <li><a class="dropdown-item" href="/articles">Articles</a></li>
               <li><a class="dropdown-item" href="/nitrogen-dashboard">Nitrogen Pollution</a></li>
+              <li><a class="dropdown-item" href="/stormwater-dashboard">Stormwater Pits</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/stormwater-dashboard">Stormwater Pits</a>
+            <a class="nav-link" href="/water-supply">Water Supply Hub</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
@@ -68,10 +72,10 @@
           <h1 class="mx-auto my-0 text-uppercase" style="font-size: 60px; font-family: 'Varela Round';">Stormwater Pits
           </h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5" style="font-family: 'Varela Round';">
-            Discover our guide on Stormwater Pits: their definition, potential impacts, map, and
+            Discover our guide on Stormwater Pits: their definition, potential impacts, an interactive map, and
             educational resources for effective stormwater management.
           </h2>
-
+          <a class="btn btn-primary" href="#Introduction">Content below</a>
         </div>
       </div>
     </div>
@@ -81,13 +85,10 @@
   <section class="tyt text-center pt-0 bg-light" id="about">
     <div class="container px-4 px-lg-5" style="padding-top: 0; max-width: 98vw; margin: auto;">
 
-      <div class="row">
-        <div class="col-12">
-          <hr style="height: 3px; background-color: black; border: none; margin-top: 70px; margin-bottom: 70px;">
-        </div>
-      </div>
+      <div class="col-md-3 d-none d-md-block w-100"
+        style="border: 1px solid black; height: 0; margin-top: 70px; margin-bottom: 70px"></div>
 
-      <div class="row">
+      <div class="row" id="Introduction">
         <div class="col-12 text-end">
           <p class="text-uppercase"
             style="font-size: 45px; font-family: 'Varela Round', sans-serif; font-weight: 400; color: black; line-height: 104px; letter-spacing: 20px;">
@@ -152,7 +153,7 @@
         <div class="col-12 text-center mt-lg-5">
           <p class="text-uppercase"
             style="font-size: 25px; font-family: 'Varela Round', sans-serif; font-weight: 400; letter-spacing: 17px;">
-            Map of Stormwater Pit Locations 
+            Map of Stormwater Pits
           </p>
         </div>
       </div>
@@ -218,42 +219,67 @@
 
       <div class="container mt-3 mb-5 pt-5" style="font-family: 'Nunito', sans-serif;">
         <div class="row">
+          <section class="page-section bg-light" id="flipsection">
+            <div class="row text-center">
+              <!-- Card 1: Flushing Toilets -->
+              <div class="col-md-6 mb-4">
+                <div class="card-item" id="cardflipping1" role="region" aria-labelledby="flushing-toilets-title">
+                  <div class="flip-box">
+                    <div class="flip-box-front text-center bg-cover"
+                      style="background-image: url('/static/assets/img/image.jpg');">
+                      <div class="inner text-white p-3">
+                        <h3 class="flip-box-header" id="flushing-toilets-title">Flushing Toilets</h3>
+                        <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="Learn more" class="flip-box-img"
+                          loading="lazy">
+                      </div>
+                    </div>
+                    <div class="flip-box-back text-center bg-cover"
+                      style="background-image: url('/static/assets/img/image.jpg');">
+                      <div class="inner text-white p-3">
+                        <p>Stormwater Systems are designed to manage rainfall and surface runoff. When it rains,
+                          stormwater flows
+                          over streets, rooftops, and other hard surfaces, collecting pollutants along the way.</p>
+                        <p>The stormwater system captures this runoff through gutters and drains, channeling it to
+                          stormwater basins
+                          or natural water bodies. The primary goal is to prevent flooding and manage water flow, not to
+                          treat or handle waste.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          <div class="col-md-6 custom-container text-center">
-            <img src="/static/assets/img/flush.jpg" alt="" class="img-fluid w-100"
-              style="height: 350px; object-fit: cover; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
-            <h4 class="custom-text font-weight-bold mt-3">Flushing Toilets</h4>
-            <span class="custom-text font-weight-normal d-block mt-2">
-              Stormwater Systems are designed to manage rainfall and surface runoff. When it rains, stormwater flows
-              over streets,
-              rooftops, and other hard surfaces, collecting pollutants along the way. The stormwater system captures
-              this runoff
-              through gutters and drains, channeling it to stormwater basins or natural water bodies. The primary goal
-              is to
-              prevent flooding and manage water flow, not to treat or handle waste.
-            </span>
-          </div>
-
-
-          <div class="col-md-6 custom-container text-center">
-            <img src="/static/assets/img/irri.jpg" alt="" class="img-fluid w-100"
-              style="height: 350px; object-fit: cover; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);">
-            <h4 class="custom-text font-weight-bold mt-3">Irrigation</h4>
-            <span class="custom-text font-weight-normal d-block mt-2">
-              In Melbourne, stormwater can be effectively captured and utilized for irrigation in both urban and
-              residential areas
-              through practices such as rainwater harvesting systems. These systems allow residents and businesses to
-              collect and
-              store rainwater for use in maintaining gardens, parks, and green spaces. By using stormwater for
-              irrigation, Melbourne
-              not only helps reduce the demand on potable water supplies but also conserves precious drinking water
-              resources. This
-              approach aligns with the city’s sustainability goals and supports its broader efforts to promote water
-              conservation.
-            </span>
-          </div>
+              <!-- Card 2: Irrigation -->
+              <div class="col-md-6 mb-4">
+                <div class="card-item" id="cardflipping2" role="region" aria-labelledby="irrigation-title">
+                  <div class="flip-box">
+                    <div class="flip-box-front text-center bg-cover"
+                      style="background-image: url('/static/assets/img/irri.jpg');">
+                      <div class="inner text-white p-3">
+                        <h3 class="flip-box-header" id="irrigation-title">Irrigation</h3>
+                        <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="Learn more" class="flip-box-img"
+                          loading="lazy">
+                      </div>
+                    </div>
+                    <div class="flip-box-back text-center bg-cover"
+                      style="background-image: url('/static/assets/img/irri.jpg');">
+                      <div class="inner text-white p-3">
+                        <p>In Melbourne, stormwater can be effectively captured and utilized for irrigation in both
+                          urban and
+                          residential areas through practices such as rainwater harvesting systems.</p>
+                        <p>These systems allow residents and businesses to collect and store rainwater for use in
+                          maintaining gardens, parks,
+                          and green spaces, reducing the demand on potable water supplies.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
+
 
       <div class="container mt-5 pt-5">
         <div class="row text-center">
@@ -341,6 +367,37 @@
       </div>
     </div>
   </section>
+
+  <!-- Floating Back To Top  Button -->
+  <a href="javascript:void(0)" id="backToTop" class="back-to-top "
+    style="display:none; position: fixed; right: 32px; bottom: 32px; width: 56px; height: 56px; background-color: #1857a0; color: white; text-decoration: none; cursor: pointer; z-index: 999; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 100%; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.4);">
+    <svg class="icon__arrow-up" viewBox="0 0 24 24" style="fill: white; width: 32px; height: 32px;">
+      <title>Back to top</title>
+      <path
+        d="M18.71,11.71a1,1,0,0,1-1.42,0L13,7.41V19a1,1,0,0,1-2,0V7.41l-4.29,4.3a1,1,0,0,1-1.42-1.42l6-6a1,1,0,0,1,1.42,0l6,6A1,1,0,0,1,18.71,11.71Z">
+      </path>
+    </svg>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.getElementById('backToTop');
+      const amountScrolled = 300;
+
+      window.addEventListener('scroll', function () {
+        window.scrollY >= amountScrolled
+          ? backToTop.style.display = 'flex'
+          : backToTop.style.display = 'none';
+      });
+
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+
+
   <!-- Footer-->
   <footer class="footer bg-black small text-center text-white-50">
     <div class="container px-4 px-lg-5">
