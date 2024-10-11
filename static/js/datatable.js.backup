@@ -47,8 +47,8 @@ function populateFilters(data) {
   let maxPercentage = -Infinity;
 
   data.slice(1).forEach((row) => {
-    if (row[0]) brands.add(row[0]);
-    if (row[6]) categories.add(row[6]);
+    if (row[0]) brands.add(row[0]); 
+    if (row[6]) categories.add(row[6]); 
     if (row[5]) {
       const percentage = parseFloat(row[5]);
       if (!isNaN(percentage)) {
@@ -78,30 +78,18 @@ function populateFilters(data) {
     categorySelect.appendChild(option);
   });
 
-  // Initialize Nitrogen Percentage Slider using the new RangeSlider
-  // const nitrogenSliderElement = document.getElementById('nitrogenSlider');
-
-  // // Check if RangeSlider instance exists before attempting to destroy it
-  // if (
-  //   nitrogenSliderElement.RangeSlider &&
-  //   typeof nitrogenSliderElement.RangeSlider.destroy === 'function'
-  // ) {
-  //   nitrogenSliderElement.RangeSlider.destroy();
-  // }
-
-  // Re-initialize or update the slider
-  // const slider = new RangeSlider('.slider', {
-  //   min: minPercentage,
-  //   max: maxPercentage,
-  //   step: 0.1,
-  //   value: [minPercentage, maxPercentage],
-  //   onInput: (values) => {
-  //     applyFilters(); // Reapply filters when slider input changes
-  //   },
-  // });
-
-  // Attach the new slider instance to the DOM element
-  // nitrogenSliderElement.RangeSlider = slider;
+  // Initialize Nitrogen Percentage Slider
+  const nitrogenSlider = document.getElementById('nitrogenSlider');
+  nitrogenSlider.noUiSlider?.destroy(); // Reset the slider if it already exists
+  noUiSlider.create(nitrogenSlider, {
+    start: [minPercentage, maxPercentage],
+    connect: true,
+    range: {
+      min: minPercentage,
+      max: maxPercentage,
+    },
+    tooltips: [true, true],
+  });
 }
 
 // Apply Filters and Update filteredData
@@ -111,12 +99,11 @@ function applyFilters() {
   const productName = document
     .getElementById('productNamesearch')
     .value.toLowerCase();
-
-  // Get nitrogen slider values from the new slider instance
-  // const nitrogenSliderElement = document.getElementById('nitrogenSlider');
-  // const nitrogenSliderValues = nitrogenSliderElement.RangeSlider.value; // [minValue, maxValue]
-  // const minNitrogen = parseFloat(nitrogenSliderValues[0]);
-  // const maxNitrogen = parseFloat(nitrogenSliderValues[1]);
+  const nitrogenSliderValues = document
+    .getElementById('nitrogenSlider')
+    .noUiSlider.get();
+  const minNitrogen = parseFloat(nitrogenSliderValues[0]);
+  const maxNitrogen = parseFloat(nitrogenSliderValues[1]);
 
   // Filter data based on selected filters
   filteredData = originalData.slice(1).filter((row) => {
@@ -130,8 +117,12 @@ function applyFilters() {
     const productNameMatch = productName
       ? rowProductName?.includes(productName)
       : true;
+    const nitrogenMatch =
+      !isNaN(rowNitrogen) &&
+      rowNitrogen >= minNitrogen &&
+      rowNitrogen <= maxNitrogen;
 
-    return brandMatch && categoryMatch && productNameMatch;
+    return brandMatch && categoryMatch && productNameMatch && nitrogenMatch;
   });
 
   // Update the table with filtered data
@@ -252,11 +243,11 @@ applyFilters = () => {
   const productName = document
     .getElementById('productNamesearch')
     .value.toLowerCase();
-  // const nitrogenSliderValues = document
-  //   .getElementById('nitrogenSlider')
-  //   .RangeSlider.get();
-  // const minNitrogen = parseFloat(nitrogenSliderValues[0]);
-  // const maxNitrogen = parseFloat(nitrogenSliderValues[1]);
+  const nitrogenSliderValues = document
+    .getElementById('nitrogenSlider')
+    .noUiSlider.get();
+  const minNitrogen = parseFloat(nitrogenSliderValues[0]);
+  const maxNitrogen = parseFloat(nitrogenSliderValues[1]);
 
   // Filter data based on selected filters
   filteredData = originalData.slice(1).filter((row) => {
@@ -270,8 +261,12 @@ applyFilters = () => {
     const productNameMatch = productName
       ? rowProductName?.includes(productName)
       : true;
+    const nitrogenMatch =
+      !isNaN(rowNitrogen) &&
+      rowNitrogen >= minNitrogen &&
+      rowNitrogen <= maxNitrogen;
 
-    return brandMatch && categoryMatch && productNameMatch;
+    return brandMatch && categoryMatch && productNameMatch && nitrogenMatch;
   });
 
   // Update the table with filtered data
@@ -288,42 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Global variables to store chart instances
-let barChart1Instance = null;
-let barChart2Instance = null;
-let lineChartInstance = null;
-
-// Function to update all charts based on filtered data
-function updateCharts(filteredData) {
-  // Clear existing charts before creating new ones
-  clearCharts();
-
-  // Create updated versions of the charts with the filtered data
-  createBarChart1(filteredData);
-  createBarChart2(filteredData);
-  createLineChart(filteredData);
-}
-
-// Function to destroy existing charts if they exist (to avoid overlapping or stacking)
-function clearCharts() {
-  // Destroy Chart 1 if it exists
-  if (barChart1Instance) {
-    barChart1Instance.destroy();
-    barChart1Instance = null; // Reset to null after destroying
-  }
-  // Destroy Chart 2 if it exists
-  if (barChart2Instance) {
-    barChart2Instance.destroy();
-    barChart2Instance = null;
-  }
-  // Destroy Line Chart if it exists
-  if (lineChartInstance) {
-    lineChartInstance.destroy();
-    lineChartInstance = null;
-  }
-}
-
-// Modify createBarChart1 to store the chart instance in a global variable for later destruction
+// Function to create the first bar chart (Nitrogen Ingredients in Products)
 function createBarChart1(filteredData) {
   const ctx1 = document.getElementById('barChart1').getContext('2d');
 
@@ -335,8 +295,7 @@ function createBarChart1(filteredData) {
   const productNames = sortedData.map((row) => row[1]); // Assuming product name is in column 1
   const nitrogenPercentages = sortedData.map((row) => parseFloat(row[5])); // Nitrogen percentage in column 5
 
-  // Create the bar chart and store it in the global variable
-  barChart1Instance = new Chart(ctx1, {
+  new Chart(ctx1, {
     type: 'bar',
     data: {
       labels: productNames,
@@ -378,7 +337,7 @@ function createBarChart1(filteredData) {
   });
 }
 
-// Modify createBarChart2 to store the chart instance in a global variable
+// Function to create the second bar chart (Distribution of Products by Brand)
 function createBarChart2(filteredData) {
   const ctx2 = document.getElementById('barChart2').getContext('2d');
   const brandCounts = {};
@@ -393,20 +352,24 @@ function createBarChart2(filteredData) {
     }
   });
 
+  // Extract brands and counts
   const brands = Object.keys(brandCounts);
   const counts = Object.values(brandCounts);
 
+  // Combine brands and counts for sorting
   const combined = brands.map((brand, index) => {
     return { brand, count: counts[index] };
   });
 
+  // Sort by count in ascending order
   combined.sort((a, b) => a.count - b.count);
 
+  // Extract sorted brands and counts
   const sortedBrands = combined.map((item) => item.brand);
   const sortedCounts = combined.map((item) => item.count);
 
-  // Create the bar chart and store it in the global variable
-  barChart2Instance = new Chart(ctx2, {
+  // Create the bar chart
+  new Chart(ctx2, {
     type: 'bar',
     data: {
       labels: sortedBrands,
@@ -432,6 +395,9 @@ function createBarChart2(filteredData) {
           grid: {
             display: false,
           },
+          title: {
+            display: false,
+          },
         },
         x: {
           grid: {
@@ -452,19 +418,20 @@ function createBarChart2(filteredData) {
   });
 }
 
-// Modify createLineChart to store the chart instance in a global variable
+// Function to create the line chart (Nitrogen Ingredients vs Number of Nitrogen Ingredients)
 function createLineChart(filteredData) {
   const ctx3 = document.getElementById('lineChart').getContext('2d');
 
+  // Sort the data based on nitrogen percentages in ascending order
   filteredData.sort((a, b) => parseFloat(a[5]) - parseFloat(b[5]));
 
-  const nitrogenPercentages = filteredData.map((row) => parseFloat(row[5]));
-  const nitrogenIngredients = filteredData.map((row) => parseInt(row[3], 10));
+  const nitrogenPercentages = filteredData.map((row) => parseFloat(row[5])); 
+  const nitrogenIngredients = filteredData.map((row) => parseInt(row[3], 10)); 
 
+  // Determine the maximum nitrogen percentage
   const maxNitrogenPercentage = Math.max(...nitrogenPercentages);
 
-  // Create the line chart and store it in the global variable
-  lineChartInstance = new Chart(ctx3, {
+  new Chart(ctx3, {
     type: 'line',
     data: {
       labels: nitrogenPercentages,
@@ -497,8 +464,8 @@ function createLineChart(filteredData) {
               return value.toFixed(0);
             },
           },
-          min: 0,
-          max: maxNitrogenPercentage + 5,
+          min: 0, // Set the minimum value to 0
+          max: maxNitrogenPercentage + 5, 
         },
         y: {
           title: {
@@ -520,44 +487,13 @@ function createLineChart(filteredData) {
   });
 }
 
-// Call updateCharts after filters are applied
-applyFilters = () => {
-  const brand = document.getElementById('brandSelect').value;
-  const category = document.getElementById('categorySelect').value;
-  const productName = document
-    .getElementById('productNamesearch')
-    .value.toLowerCase();
-  // const nitrogenSliderValues = document
-  //   .getElementById('nitrogenSlider')
-  //   .RangeSlider.get();
-  // const minNitrogen = parseFloat(nitrogenSliderValues[0]);
-  // const maxNitrogen = parseFloat(nitrogenSliderValues[1]);
-
-  filteredData = originalData.slice(1).filter((row) => {
-    const rowBrand = row[0];
-    const rowCategory = row[6];
-    const rowProductName = row[1]?.toLowerCase();
-    const rowNitrogen = parseFloat(row[5]);
-
-    const brandMatch = brand ? rowBrand === brand : true;
-    const categoryMatch = category ? rowCategory === category : true;
-    const productNameMatch = productName
-      ? rowProductName?.includes(productName)
-      : true;
-
-    return brandMatch && categoryMatch && productNameMatch;
-  });
-
-  populateTable(filteredData);
-  updateSummaryStatistics(filteredData);
-  updateCharts(filteredData); // Update charts after filters are applied
-};
-
-// Call updateCharts when the data is initially loaded
+// Call these functions after filters are applied or when data is loaded
 document.addEventListener('DOMContentLoaded', () => {
   getData().then(() => {
-    updateSummaryStatistics(filteredData);
-    updateCharts(filteredData); // Create initial charts when data is loaded
+    // Assuming `filteredData` has been populated in getData or applyFilters
+    createBarChart1(filteredData);
+    createBarChart2(filteredData);
+    createLineChart(filteredData);
   });
 });
 
@@ -567,33 +503,10 @@ function resetFilters() {
   document.getElementById('brandSelect').selectedIndex = -1;
   document.getElementById('categorySelect').selectedIndex = -1;
   document.getElementById('productNamesearch').value = '';
-
-  // Reset the multi-select dropdowns by unchecking all options
-  const brandSelect = document.getElementById('brandSelect');
-  const categorySelect = document.getElementById('categorySelect');
-
-  // Unselect all options in brandSelect
-  Array.from(brandSelect.options).forEach((option) => {
-    option.selected = false;
-  });
-  brandSelect.loadOptions(); // Refresh the multi-select dropdown
-
-  // Unselect all options in categorySelect
-  Array.from(categorySelect.options).forEach((option) => {
-    option.selected = false;
-  });
-  categorySelect.loadOptions(); // Refresh the multi-select dropdown
-
-  // Fetch the original options if necessary
-  fetch('/options')
-    .then((d) => d.json())
-    .then((d) => {
-      sel1.innerHTML = d.map(
-        (t) => '<option value="' + t.value + '">' + t.text + '</option>'
-      );
-
-      sel1.loadOptions();
-    });
+ 
+  const nitrogenSlider = document.getElementById('nitrogenSlider');
+  const sliderRange = nitrogenSlider.noUiSlider.options.range; // Get initial slider range
+  nitrogenSlider.noUiSlider.set([sliderRange.min, sliderRange.max]); // Reset slider to initial range
 
   // Reset filteredData to original data
   filteredData = originalData.slice(1);

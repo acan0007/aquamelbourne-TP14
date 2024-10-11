@@ -74,9 +74,11 @@
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">How much water Are You saving?</h1>
+                    <h1 class="mx-auto my-0 text-uppercase" style="font-size: 80px;">How much water Are You saving?</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">
-                        Preserving Melbourne's Waterways for Future Generations
+
+                        It is never too late for you to take action to reduce your water usage in the home. Together,
+                        track your water usage here.
                     </h2>
                     <a class="btn btn-primary" href="#Introduction">Content Below</a>
                 </div>
@@ -101,32 +103,35 @@
                 </div>
             </div>
             <div class="col-12 text-start mt-3" style="margin-left: 10px;">
-                <h3>Look at the water storage level and the amount of precipitation of different water reservoirs.
+                <h3>Look at the water storage level, water consumption level and expenditure level in Victoria.
                 </h3>
             </div>
 
             <div id="map-section" style="margin: 20px;">
                 <h2>Our Location</h2>
-                <iframe 
-                    src="/water" 
-                    width="1200" 
-                    height="650" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
+                <iframe src="/water" width="1200" height="650" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
 
             <div class="instruction-box mt-lg-5">
                 <h3 class="mt-5 mb-3">Instructions</h3>
                 <ul class="text-start" style="margin-left: 10vw;">
-                    <li>Click the highlighted region to show the precipitation and water storage level of the
-                        reservoir.
-                    </li>
-                    <li>A table will be showing the data of the precipitation and the storage level of the water
-                        reservoir.
-                    </li>
-                    <li>Click the "X" button if you want to close the table.</li>
+                    View Selection:<br>
+
+                    At the bottom of the chart, you will see three tabs:<br>
+                    &#x2022; Consumption and Use<br>
+                    &#x2022; Expenditure<br>
+                    &#x2022; Rainfall and Dam Storage<br>
+                    (Click on any of these tabs to switch between different visualizations. Each tab shows a different
+                    dataset and chart.)<br>
+                    <br>
+                    Interacting with the Rainfall and Dam Storage Chart:<br>
+
+                    &#x2022; The chart shows two types of data over the years (e.g., 2014-2022):<br>
+                    &#x2022; Rainfall (in mm): Represented by the blue bars.<br>
+                    &#x2022; Dam Storage (in ML): Represented by the line with data points.<br>
+                    &#x2022; Hover over any data point or bar to view the exact rainfall amount and dam storage for that
+                    particular year.
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </ul>
             </div>
@@ -135,319 +140,339 @@
         </div>
 
 
-    <style>
-        /* Style adjustments for the modal */
-        .modal-header {
-            background-color: #28a745;
-            /* Bootstrap success color */
-            color: white;
-        }
+        <style>
+            /* Style adjustments for the modal */
+            .modal-header {
+                background-color: #28a745;
+                /* Bootstrap success color */
+                color: white;
+            }
 
-        .modal-footer {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+            .modal-footer {
+                display: flex;
+                justify-content: center;
+            }
+        </style>
 
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-end mt-5">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-end mt-5">
 
-                    <div class="col-md-3 d-none d-md-block w-100"
-                        style="border: 1px solid black; height: 0; margin-top: 70px; margin-bottom: 50px"></div>
+                        <div class="col-md-3 d-none d-md-block w-100"
+                            style="border: 1px solid black; height: 0; margin-top: 70px; margin-bottom: 50px"></div>
 
-                    <p class="text-uppercase text-center"
-                        style="font-size: 45px; font-family: 'Varela Round', sans-serif; font-weight: 400; color: black; line-height: 104px; letter-spacing: 20px;">
-                        How much water can you save?
-                    </p>
+                        <p class="text-uppercase text-center"
+                            style="font-size: 45px; font-family: 'Varela Round', sans-serif; font-weight: 400; color: black; line-height: 104px; letter-spacing: 20px;">
+                            How much water can you save?
+                        </p>
+                    </div>
                 </div>
-            </div>
 
 
-            <section id="calculator" class="p-3">
-                <div class="container">
-                    <div class="card">
-                        <div class="card-header text-center pt-4">
-                            <h3>Water Savings Calculator</h3>
-                        </div>
-
-                        <!-- Water Savings Method -->
-
-                        <div class=" row" style="margin-left: 20px; margin-right: 20px;">
-                            <div>
-                                <h5 class="mt-4 mb-3"> To get started select one of the following water
-                                    savings method</h5>
+                <section id="calculator" class="p-3">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-header text-center pt-4">
+                                <h3>Water Savings Calculator</h3>
                             </div>
 
-                            <div class="row">
-                                <!-- Card 1 - Toilet Flush -->
-                                <div class="col-md-4 mt-2">
-                                    <div class="card mb-4 select-method" data-water="10" style="height: 300px;">
-                                        <div class="card-body"
-                                            style="background-image: url('/static/assets/img/i.jpg'); background-size: cover; height: 100%;">
-                                            <h5 class="card-title text-white text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Toilet Flush</h5>
-                                            <p class="card-text text-white text-center" style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%);">Saves 10 litres per flush</p>
+                            <!-- Water Savings Method -->
+
+                            <div class="row" style="margin-left: 20px; margin-right: 20px;">
+                                <div>
+                                    <h5 class="mt-4 mb-3"> To get started select one of the following water
+                                        savings method</h5>
+                                </div>
+
+                                <div class="row">
+                                    <!-- Card 1 - Toilet Flush -->
+                                    <div class="col-md-4 mt-2">
+                                        <div class="card mb-4 select-method" data-water="10" style="height: 300px;">
+                                            <div class="card-body"
+                                                style="background-image: url('/static/assets/img/i.jpg'); background-size: cover; height: 100%;">
+                                                <h5 class="card-title text-white text-center"
+                                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                    Toilet Flush</h5>
+                                                <p class="card-text text-white text-center"
+                                                    style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%);">
+                                                    Saves 10 litres per flush</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 - Shower Wash -->
+                                    <div class="col-md-4 mt-2">
+                                        <div class="card mb-4 select-method" data-water="20" style="height: 300px;">
+                                            <div class="card-body"
+                                                style="background-image: url('/static/assets/img/shower.jpg'); background-size: cover; height: 100%;">
+                                                <h5 class="card-title text-white text-center"
+                                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                    Shower Wash</h5>
+                                                <p class="card-text text-white text-center"
+                                                    style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%);">
+                                                    Saves 20 litres per wash</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 3 - Washer -->
+                                    <div class="col-md-4 mt-2">
+                                        <div class="card mb-4 select-method" data-water="10" style="height: 300px;">
+                                            <div class="card-body"
+                                                style="background-image: url('/static/assets/img/ric.webp'); background-size: cover; height: 100%;">
+                                                <h5 class="card-title text-white text-center"
+                                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                    Washer</h5>
+                                                <p class="card-text text-white text-center"
+                                                    style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%);">
+                                                    Saves 10 litres per wash</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Card 2 - Shower Wash -->
-                                <div class="col-md-4 mt-2">
-                                    <div class="card mb-4 select-method" data-water="20" style="height: 300px;">
-                                        <div class="card-body"
-                                            style="background-image: url('/static/assets/img/shower.jpg'); background-size: cover; height: 100%;">
-                                            <h5 class="card-title text-white text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Shower Wash</h5>
-                                            <p class="card-text text-white text-center" style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%);">Saves 20 litres per wash</p>
-                                        </div>
+                            </div>
+
+                            <!-- Inputs for Water Tariff, Usage, Household Members, and Assumptions -->
+                            <div class="card-body" style="margin-left: 20px; margin-right: 20px;">
+                                <div class="row mb-3">
+                                    <label for="water-savings-method" class="col-form-label col-6"
+                                        style="text-align: left;">1. Water Savings
+                                        Method:</label>
+                                    <div class="col-6">
+                                        <input type="text" class="form-control" id="water-savings-method"
+                                            placeholder="Select a Water Savings Method Above" disabled>
                                     </div>
                                 </div>
 
-                                <!-- Card 3 - Washer -->
-                                <div class="col-md-4 mt-2">
-                                    <div class="card mb-4 select-method" data-water="10" style="height: 300px;">
-                                        <div class="card-body"
-                                            style="background-image: url('/static/assets/img/ric.webp'); background-size: cover; height: 100%;">
-                                            <h5 class="card-title text-white text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Washer</h5>
-                                            <p class="card-text text-white text-center" style="position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%);">Saves 10 litres per wash</p>
-                                        </div>
+                                <div class="row mb-3">
+                                    <label for="tariff-unit" class="col-form-label col-6" style="text-align: left;">2.
+                                        Water Tariff Unit:</label>
+                                    <div class="col-6">
+                                        <select class="form-select" id="tariff-unit">
+                                            <option value="1">Per Litre</option>
+                                            <option value="1000">Per Cubic Meter</option>
+                                        </select>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
-
-                        <!-- Inputs for Water Tariff, Usage, Household Members, and Assumptions -->
-                        <div class="card-body" style="margin-left: 20px; margin-right: 20px;">
-                            <div class="row mb-3">
-                                <label for="water-savings-method" class="col-form-label col-6">1. Water Savings
-                                    Method:</label>
-                                <div class="col-6">
-                                    <input type="text" class="form-control" id="water-savings-method"
-                                        placeholder="Select a Water Savings Method Above" disabled>
+                                <div class="row mb-3">
+                                    <label for="water-tariff" class="col-form-label col-6" style="text-align: left;">3.
+                                        Current Water Tariff (in
+                                        AUD):</label>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="water-tariff"
+                                            placeholder="Enter the water tariff">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="tariff-unit" class="col-form-label col-6">2. Water Tariff Unit:</label>
-                                <div class="col-6">
-                                    <select class="form-select" id="tariff-unit">
-                                        <option value="1">Per Litre</option>
-                                        <option value="1000">Per Cubic Meter</option>
-                                    </select>
+                                <div class="row mb-3">
+                                    <label for="number-of-items" class="col-form-label col-6"
+                                        style="text-align: left;">4. Number of Items in use
+                                        (e.g.,
+                                        Showerheads or Washers):</label>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="number-of-items"
+                                            placeholder="Enter number of items">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="water-tariff" class="col-form-label col-6">3. Current Water Tariff (in
-                                    AUD):</label>
-                                <div class="col-6">
-                                    <input type="number" class="form-control" id="water-tariff"
-                                        placeholder="Enter the water tariff">
+                                <div class="row mb-3">
+                                    <label for="household-members" class="col-form-label col-6"
+                                        style="text-align: left;">5. Household
+                                        Members:</label>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="household-members"
+                                            placeholder="Number of people in the household">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="number-of-items" class="col-form-label col-6">4. Number of Items in use
-                                    (e.g.,
-                                    Showerheads or Washers):</label>
-                                <div class="col-6">
-                                    <input type="number" class="form-control" id="number-of-items"
-                                        placeholder="Enter number of items">
+                                <div class="row mb-3">
+                                    <label for="assumption" class="col-form-label col-6" style="text-align: left;">6.
+                                        Usage Assumption:</label>
+                                    <div class="col-6">
+                                        <select class="form-select" id="assumption">
+                                            <option value="shared">All members share one item</option>
+                                            <option value="own">Each member has their own</option>
+                                        </select>
+                                        <small class="form-text text-muted usage-description" id="usage-description">
+                                            (Assumes all members share one item)
+                                        </small>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="household-members" class="col-form-label col-6">5. Household
-                                    Members:</label>
-                                <div class="col-6">
-                                    <input type="number" class="form-control" id="household-members"
-                                        placeholder="Number of people in the household">
+                                <div class="row mb-3">
+                                    <label for="time-period" class="col-form-label col-6" style="text-align: left;">7.
+                                        Period of Usage:</label>
+                                    <div class="col-6">
+                                        <select class="form-select" id="time-period">
+                                            <option value="1">Per Day</option>
+                                            <option value="7">Per Week</option>
+                                            <option value="30">Per Month</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="assumption" class="col-form-label col-6">6. Usage Assumption:</label>
-                                <div class="col-6">
-                                    <select class="form-select" id="assumption">
-                                        <option value="shared">All members share one item</option>
-                                        <option value="own">Each member has their own</option>
-                                    </select>
-                                    <small class="form-text text-muted usage-description" id="usage-description">
-                                        (Assumes all members share one item)
-                                    </small>
+                                <div class="row mb-3">
+                                    <label for="water-usage" class="col-form-label col-6" style="text-align: left;">8.
+                                        How Many times using the water
+                                        saving
+                                        method:</label>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="water-usage"
+                                            placeholder="Enter a number">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row mb-3">
-                                <label for="time-period" class="col-form-label col-6">7. Period of Usage:</label>
-                                <div class="col-6">
-                                    <select class="form-select" id="time-period">
-                                        <option value="1">Per Day</option>
-                                        <option value="7">Per Week</option>
-                                        <option value="30">Per Month</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="water-usage" class="col-form-label col-6">8. How Many times using the water
-                                    saving
-                                    method:</label>
-                                <div class="col-6">
-                                    <input type="number" class="form-control" id="water-usage"
-                                        placeholder="Enter a number">
-                                </div>
-                            </div>
-
-                            <div class="row mb-4 mt-lg-5">
-                                <div class="col-12 d-flex justify-content-center gap-3">
-                                    <button type="button" class="btn btn-secondary btn-sm"
-                                        id="resetFilters">Reset</button>
-                                    <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+                                <div class="row mb-4 mt-lg-5">
+                                    <div class="col-12 d-flex justify-content-center gap-3">
+                                        <button type="button" class="btn btn-secondary btn-sm"
+                                            id="resetFilters">Reset</button>
+                                        <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-        </div>
-    </section>
+            </div>
+        </section>
 
 
-    <!-- Error Modal -->
-    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content border-danger">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <span id="error-message"></span>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <!-- Error Modal -->
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content border-danger">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="error-message"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Modal for Results -->
-    <div class="modal fade" id="resultsModal" tabindex="-1" aria-labelledby="resultsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="resultsModalLabel">Congratulations!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <h4 class="mt-5 mb-5">You have saved</h4>
-                    <div class="row justify-content-center align-items-center">
-                        <div class="col-auto">
-                            <div class="card  d-inline-block" style="width: 120px;">
-                                <div class="card-body d-flex justify-content-center align-items-center">
-                                    <span id="money-saved" style="font-weight: bold;">$0 AUD</span>
+        <!-- Modal for Results -->
+        <div class="modal fade" id="resultsModal" tabindex="-1" aria-labelledby="resultsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="resultsModalLabel">Congratulations!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h4 class="mt-5 mb-5">You have saved</h4>
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <div class="card  d-inline-block" style="width: 120px;">
+                                    <div class="card-body d-flex justify-content-center align-items-center">
+                                        <span id="money-saved" style="font-weight: bold;">$0 AUD</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-auto mx-1">AND</div>
-                        <div class="col-auto">
-                            <div class="card  d-inline-block" style="width: 150px;">
-                                <div class="card-body d-flex justify-content-center align-items-center">
-                                    <span id="water-saved" style="font-weight: bold;">0 Litres</span>
+                            <div class="col-auto mx-1">AND</div>
+                            <div class="col-auto">
+                                <div class="card  d-inline-block" style="width: 150px;">
+                                    <div class="card-body d-flex justify-content-center align-items-center">
+                                        <span id="water-saved" style="font-weight: bold;">0 Litres</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let selectedMethod = null;
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            let selectedMethod = null;
 
-        document.querySelectorAll('.select-method').forEach(card => {
-            card.addEventListener('click', function () {
-                document.querySelectorAll('.select-method').forEach(c => c.classList.remove('border-4', 'border-secondary'));
-                this.classList.add('border-4', 'border-secondary');
-                selectedMethod = this.getAttribute('data-water');
-                document.getElementById('water-savings-method').value = this.querySelector('.card-title').innerText;
+            document.querySelectorAll('.select-method').forEach(card => {
+                card.addEventListener('click', function () {
+                    document.querySelectorAll('.select-method').forEach(c => c.classList.remove('border-4', 'border-secondary'));
+                    this.classList.add('border-4', 'border-secondary');
+                    selectedMethod = this.getAttribute('data-water');
+                    document.getElementById('water-savings-method').value = this.querySelector('.card-title').innerText;
+                });
             });
-        });
 
-        document.getElementById('calculate').addEventListener('click', function () {
-            const tariffUnit = parseInt(document.getElementById('tariff-unit').value);
-            const tariff = parseFloat(document.getElementById('water-tariff').value);
-            const usage = parseInt(document.getElementById('water-usage').value);
-            const householdMembers = parseInt(document.getElementById('household-members').value);
-            const numberOfItems = parseInt(document.getElementById('number-of-items').value);
-            const assumption = document.getElementById('assumption').value;
-            const periodMultiplier = parseInt(document.getElementById('time-period').value);
+            document.getElementById('calculate').addEventListener('click', function () {
+                const tariffUnit = parseInt(document.getElementById('tariff-unit').value);
+                const tariff = parseFloat(document.getElementById('water-tariff').value);
+                const usage = parseInt(document.getElementById('water-usage').value);
+                const householdMembers = parseInt(document.getElementById('household-members').value);
+                const numberOfItems = parseInt(document.getElementById('number-of-items').value);
+                const assumption = document.getElementById('assumption').value;
+                const periodMultiplier = parseInt(document.getElementById('time-period').value);
 
-            // Validations
-            if (!selectedMethod || !isValidPositiveInteger(usage) || !isValidPositiveInteger(householdMembers) ||
-                !isValidPositiveInteger(numberOfItems) || tariff < 0) {
+                // Validations
+                if (!selectedMethod || !isValidPositiveInteger(usage) || !isValidPositiveInteger(householdMembers) ||
+                    !isValidPositiveInteger(numberOfItems) || tariff < 0) {
 
-                const errorMessage = "Please enter positive integers for usage, household members, and number of items, and a valid non-negative tariff.";
-                document.getElementById('error-message').innerText = errorMessage;
+                    const errorMessage = "Please enter positive integers for usage, household members, and number of items, and a valid non-negative tariff.";
+                    document.getElementById('error-message').innerText = errorMessage;
 
-                // Show the error modal
-                const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-                errorModal.show();
+                    // Show the error modal
+                    const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+                    errorModal.show();
 
-                return; // exit the function
+                    return; // exit the function
+                }
+
+                // Calculate water saved and money saved
+                const waterSavedPerUse = selectedMethod ? parseInt(selectedMethod) : 0;
+                const totalWaterSaved = waterSavedPerUse * usage * (assumption === "own" ? householdMembers : 1) * periodMultiplier;
+
+                // Determine the unit based on selected tariff unit
+                const waterUnit = tariffUnit === 1 ? "Litres of Water" : "Cubic Meters of Water";
+                const moneySaved = totalWaterSaved * (tariff / tariffUnit);
+
+                document.getElementById('water-saved').innerText = `${Math.round(totalWaterSaved)} ${waterUnit}`;
+                document.getElementById('money-saved').innerText = `$${moneySaved.toFixed(2)} AUD`;
+
+
+                // Show the modal
+                const resultsModal = new bootstrap.Modal(document.getElementById('resultsModal'));
+                resultsModal.show();
+            });
+
+
+            document.getElementById('resetFilters').addEventListener('click', function () {
+                document.getElementById('water-tariff').value = "";
+                document.getElementById('water-usage').value = "";
+                document.getElementById('household-members').value = "";
+                document.getElementById('number-of-items').value = "";
+                document.getElementById('water-savings-method').value = "";
+                selectedMethod = null;
+                document.querySelectorAll('.select-method').forEach(c => c.classList.remove('border-primary'));
+            });
+
+            // Update usage description based on assumption selection
+            document.getElementById('assumption').addEventListener('change', function () {
+                const usageDescription = document.getElementById('usage-description');
+                if (this.value === "shared") {
+                    usageDescription.innerText = "(Assumes all members share one item)";
+                } else {
+                    usageDescription.innerText = "(Assumes each member has their own item)";
+                }
+            });
+
+            function isValidPositiveInteger(value) {
+                return Number.isInteger(value) && value > 0;
             }
-
-            // Calculate water saved and money saved
-            const waterSavedPerUse = selectedMethod ? parseInt(selectedMethod) : 0;
-            const totalWaterSaved = waterSavedPerUse * usage * (assumption === "own" ? householdMembers : 1) * periodMultiplier;
-
-            // Determine the unit based on selected tariff unit
-            const waterUnit = tariffUnit === 1 ? "Litres of Water" : "Cubic Meters of Water";
-            const moneySaved = totalWaterSaved * (tariff / tariffUnit);
-
-            document.getElementById('water-saved').innerText = `${Math.round(totalWaterSaved)} ${waterUnit}`;
-            document.getElementById('money-saved').innerText = `$${moneySaved.toFixed(2)} AUD`;
-
-
-            // Show the modal
-            const resultsModal = new bootstrap.Modal(document.getElementById('resultsModal'));
-            resultsModal.show();
-        });
-
-
-        document.getElementById('resetFilters').addEventListener('click', function () {
-            document.getElementById('water-tariff').value = "";
-            document.getElementById('water-usage').value = "";
-            document.getElementById('household-members').value = "";
-            document.getElementById('number-of-items').value = "";
-            document.getElementById('water-savings-method').value = "";
-            selectedMethod = null;
-            document.querySelectorAll('.select-method').forEach(c => c.classList.remove('border-primary'));
-        });
-
-        // Update usage description based on assumption selection
-        document.getElementById('assumption').addEventListener('change', function () {
-            const usageDescription = document.getElementById('usage-description');
-            if (this.value === "shared") {
-                usageDescription.innerText = "(Assumes all members share one item)";
-            } else {
-                usageDescription.innerText = "(Assumes each member has their own item)";
-            }
-        });
-
-        function isValidPositiveInteger(value) {
-            return Number.isInteger(value) && value > 0;
-        }
-    </script>
+        </script>
 
 
 
-    </div>
+        </div>
     </section>
 
 
@@ -503,7 +528,7 @@
 
     <!-- Floating Back To Top  Button -->
     <a href="javascript:void(0)" id="backToTop" class="back-to-top "
-        style="display:none; position: fixed; right: 32px; bottom: 32px; width: 56px; height: 56px; background-color: #7464a1; color: white; text-decoration: none; cursor: pointer; z-index: 999; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 100%; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.4);">
+        style="display:none; position: fixed; right: 32px; bottom: 32px; width: 56px; height: 56px; background-color: #1857a0; color: white; text-decoration: none; cursor: pointer; z-index: 999; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 100%; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.4);">
         <svg class="icon__arrow-up" viewBox="0 0 24 24" style="fill: white; width: 32px; height: 32px;">
             <title>Back to top</title>
             <path

@@ -37,19 +37,22 @@
           <li class="nav-item">
             <a class="nav-link" href="/#about">About</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/articles">Articles</a>
+          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#projects" id="waterInsightsDropdown" role="button"
+            <a class="nav-link dropdown-toggle" href="" id="waterInsightsDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Water Insights
             </a>
             <ul class="dropdown-menu" aria-labelledby="waterInsightsDropdown">
               <li><a class="dropdown-item" href="/projects">Water Quality Dashboard</a></li>
-              <li><a class="dropdown-item" href="/articles">Articles</a></li>
               <li><a class="dropdown-item" href="/nitrogen-dashboard">Nitrogen Pollution</a></li>
+              <li><a class="dropdown-item" href="/stormwater-dashboard">Stormwater Pits</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/stormwater-dashboard">Stormwater Pits</a>
+            <a class="nav-link" href="/water-supply">Water Supply Hub</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
@@ -69,7 +72,7 @@
             Explore our curated selection of articles focused on the intersection of urban development and environmental
             preservation in Melbourne.
           </h2>
-
+           <a class="btn btn-primary" href="#features-section">Content below</a>
         </div>
       </div>
     </div>
@@ -80,7 +83,7 @@
   <section id="features-section" class="py-5" style="background-color: transparent; padding: 20px">
     <div class="container">
       <!-- Article Example -->
-      <div class="row align-items-center mb-5 text-center justify-content-center">
+      <div class="row align-items-center mb-5 justify-content-center">
         <div class="col-md-3 d-flex justify-content-center">
           <div class="card mx-auto border-0 bg-transparent shadow-none"
             style="width: 250px; height: 250px; overflow: hidden">
@@ -106,24 +109,22 @@
               <p class="card-text">
                 Water quality in Port Phillip Bay has hit a near-decade low in the wake of record rainfall, but is
                 quickly bouncing back, environmental authorities say.<br>
-
+                <br>
                 Key points:<br>
 
-                The drop in water quality has been caused by record rainfall in October and November<br>
-                The EPA said there was anecdotal evidence of some sickness linked to the poor water quality
-                But the bay is already making a quick recovery as the weather improves<br>
-                Elevated amounts of trace metals, pesticides and E. coli were detected in the bay in the latest
+                &#x2022; The drop in water quality has been caused by record rainfall in October and November<br>
+                &#x2022; The EPA said there was anecdotal evidence of some sickness linked to the poor water quality
+                but the bay is already making a quick recovery as the weather improves<br>
+                &#x2022; Elevated amounts of trace metals, pesticides and E. coli were detected in the bay in the latest
                 water quality reporting period, the Environment Protection Authority (EPA) said on Wednesday.<br>
 
-                Between 2013 and 2021, water quality in December met environmental standards around 90 per cent of
-                the time across 36 bayside beaches monitored by the EPA.<br>
+                &#x2022; Between 2013 and 2021, water quality in December met environmental standards around 90 per cent of
+                the time across 36 bayside beaches monitored by the EPA but that plunged to around 77 per cent in December 2022.<br>
 
-                But that plunged to around 77 per cent in December 2022.<br>
-
-                "It's actually worse than what it's been for previous years," EPA Victoria chief environmental
+                &#x2022; "It's actually worse than what it's been for previous years," EPA Victoria chief environmental
                 scientist Mark Patrick Taylor said.<br>
 
-                "All the rain in late spring and early summer have flushed contaminants from streams and parks and
+                &#x2022; "All the rain in late spring and early summer have flushed contaminants from streams and parks and
                 roadways into the water system," he said.<br>
 
               </p>
@@ -144,7 +145,7 @@
 
     <div class="container">
       <!-- Article Example -->
-      <div class="row align-items-center mb-5 text-center justify-content-center">
+      <div class="row align-items-center mb-5 justify-content-center">
         <div class="col-md-3 d-flex justify-content-center">
           <div class="card mx-auto border-0 bg-transparent shadow-none"
             style="width: 250px; height: 250px; overflow: hidden">
@@ -171,29 +172,29 @@
             <div class="card card-body mt-3">
               <p class="card-text">
                 Hundreds of thousands of households across Melbourne's north and east have been told to boil
-                their water after storms on Thursday caused electrical damage which resulted in contamination.
-
-                Key points:
-                Yarra Valley Water advised residents of 88 suburbs to boil their water
-                South East Water later identified another 11 affected suburbs
-                The companies said the risk of illness was low
-                Wild weather including winds of up to 124 kilometres per hour caused widespread damage, and
-                falling trees claimed the lives of three people.
-
-                The storm also damaged infrastructure, allowing undisinfected water from Silvan Dam, east of
-                Melbourne, to enter the water supply system.
-
-                "We've become aware of a potential water quality issue affecting 88 suburbs due to electrical
-                damage caused by storms overnight," Yarra Valley Water said on its Facebook page.
-
-                South East Water later identified another 11 suburbs where residents should boil their water
-                before drinking it as a precautionary measure.
-
-                "Residents should bring water to a rolling boil before drinking, washing and preparing food,
+                their water after storms on Thursday caused electrical damage which resulted in contamination.<br>
+                <br>
+                Key points:<br>
+                &#x2022; Yarra Valley Water advised residents of 88 suburbs to boil their water<br>
+                &#x2022; South East Water later identified another 11 affected suburbs<br>
+                &#x2022; The companies said the risk of illness was low<br>
+                &#x2022; Wild weather including winds of up to 124 kilometres per hour caused widespread damage, and
+                falling trees claimed the lives of three people.<br>
+                <br>
+                &#x2022; The storm also damaged infrastructure, allowing undisinfected water from Silvan Dam, east of
+                Melbourne, to enter the water supply system.<br>
+                <br>
+                &#x2022; "We've become aware of a potential water quality issue affecting 88 suburbs due to electrical
+                damage caused by storms overnight," Yarra Valley Water said on its Facebook page.<br>
+                <br>
+                &#x2022; South East Water later identified another 11 suburbs where residents should boil their water
+                before drinking it as a precautionary measure.<br>
+                <br>
+                &#x2022; "Residents should bring water to a rolling boil before drinking, washing and preparing food,
                 preparing baby formula, brushing teeth and making ice until further notice," South East Water
-                said on Facebook.
-
-                Yarra Valley Water said: "Some water may have entered our drinking water supply network that
+                said on Facebook.<br>
+                <br>
+                &#x2022; Yarra Valley Water said: "Some water may have entered our drinking water supply network that
                 had not been treated to the usual standard."
               </p>
               <p class="card-text fw-semibold text-decoration-underline">
@@ -213,7 +214,7 @@
 
     <div class="container">
       <!-- Article Example -->
-      <div class="row align-items-center mb-5 text-center justify-content-center">
+      <div class="row align-items-center mb-5 justify-content-center">
         <div class="col-md-3 d-flex justify-content-center">
           <div class="card mx-auto border-0 bg-transparent shadow-none"
             style="width: 250px; height: 250px; overflow: hidden">
@@ -240,57 +241,46 @@
             <div class="card card-body mt-3">
               <p class="card-text">
                 About the Environment Reference Standard<br>
-
+                <br>
                 The Environment Reference Standard (PDF 987KB) is part of the Environment Protection Act
                 2017 and commenced on 1 July 2021.<br>
-
-                The ERS:<br>
-
+                <br>
+                The ERS:                
                 identifies environmental values that the Victorian community want to achieve and
                 maintain
                 provides a way to assess those environmental values in locations across Victoria.
                 About environmental values<br>
-
+                <br>
                 An environmental value is an aspect of the environment and how we use it that is
                 important to us. It is an outcome Victorians want for human health and the environment.<br>
-
+                <br>
                 Examples of environmental values include:<br>
-
-                clean water to swim in
-                sound levels that let us sleep at the night
-                air quality that supports human health and the environment.
+                <br>
+                &#x2022; Clean water to swim in
+                &#x2022; Sound levels that let us sleep at the night
+                &#x2022; Air quality that supports human health and the environment.<br>
                 What the Environment Reference Standard covers<br>
 
-                The ERS is itself made up of many reference standards.<br>
-
+                &#x2022; The ERS is itself made up of many reference standards.<br>
+                <br>
                 These reference standards are in groups that cover four aspects of Victoria’s
                 environment:<br>
-
-                ambient air<br>
-                ambient sound<br>
-                land<br>
-                water (surface water and groundwater).<br>
+                <br>
+                &#x2022; Ambient air<br>
+                &#x2022; Ambient sound<br>
+                &#x2022; Land<br>
+                &#x2022; Water (surface water and groundwater).<br>
+                <br>
                 Each reference standard identifies an environmental value.<br>
-
+                <br>
                 Most reference standards also have indicators and objectives. These are how we assess if
                 the environmental value is being achieved, maintained or threatened.<br>
-
+                <br>
                 An indicator is something we measure. For example, carbon monoxide is one indicator we
                 use to measure ambient air quality.<br>
-
-                An objective is the level of an indicator, or a way of using an indicator, to help us
-                assess the environmental value. For example, for carbon monoxide (the indicator) in
-                ambient air, the objective is 9.0 parts per million (maximum concentration).<br>
-
-                Most objectives have a scientific basis for how we assess them. These objectives are
-                usually quantitative, which means they are something we can count or measure.<br>
-
-                A small number of objectives have a descriptive (qualitative) basis for how we assess
-                them. For example, to assess ambient sound in natural areas it is the kinds of sounds we
-                hear, not the levels of sound, that are important.<br>
-
+                <br>
                 The ERS also defines the parts of Victoria that the reference standards relate to.<br>
-
+                <br>
                 Some standards apply broadly. For example, the ambient air standards relate to all of
                 Victoria’s ambient air environment. Other standards have environmental values or
                 objectives that just apply to certain areas.<br>
@@ -388,7 +378,7 @@
     </div>
 
 
-  
+
   </section>
 
   <!-- Custom CSS for hover effect -->
@@ -455,6 +445,37 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Floating Back To Top  Button -->
+  <a href="javascript:void(0)" id="backToTop" class="back-to-top "
+    style="display:none; position: fixed; right: 32px; bottom: 32px; width: 56px; height: 56px; background-color: #1857a0; color: white; text-decoration: none; cursor: pointer; z-index: 999; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 100%; box-shadow: 0 4px 16px 0 rgba(0,0,0,0.4);">
+    <svg class="icon__arrow-up" viewBox="0 0 24 24" style="fill: white; width: 32px; height: 32px;">
+      <title>Back to top</title>
+      <path
+        d="M18.71,11.71a1,1,0,0,1-1.42,0L13,7.41V19a1,1,0,0,1-2,0V7.41l-4.29,4.3a1,1,0,0,1-1.42-1.42l6-6a1,1,0,0,1,1.42,0l6,6A1,1,0,0,1,18.71,11.71Z">
+      </path>
+    </svg>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTop = document.getElementById('backToTop');
+      const amountScrolled = 300;
+
+      window.addEventListener('scroll', function () {
+        window.scrollY >= amountScrolled
+          ? backToTop.style.display = 'flex'
+          : backToTop.style.display = 'none';
+      });
+
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+
   <!-- Footer-->
   <footer class="footer bg-black small text-center text-white-50">
     <div class="container px-4 px-lg-5">

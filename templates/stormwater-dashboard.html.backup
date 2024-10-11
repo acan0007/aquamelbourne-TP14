@@ -140,64 +140,6 @@
     </div>
   </section>
 
-  <!-- Map-->
-  <section class="page-section bg-light" id="map">
-    <div class="container px-4 px-lg-5" style="padding-top: 0; max-width: 98vw; margin: auto;">
-      <div class="row">
-        <div class="col-12">
-          <hr style="border-top: 3px solid black; width: 98%; margin-top: 100px;">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12 text-center mt-lg-5">
-          <p class="text-uppercase"
-            style="font-size: 25px; font-family: 'Varela Round', sans-serif; font-weight: 400; letter-spacing: 17px;">
-            Map of Stormwater Pits
-          </p>
-        </div>
-      </div>
-
-      <div class="container mt-0">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
-
-                <div class="map-placeholder" style="width: 100%; height: 70vh;  position: relative; border: none;">
-
-                  <iframe
-                    src="/stormwater"
-                    style="border:0; width: 100%; height: 100%; position: absolute; top: 0; left: 0;" allowfullscreen=""
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-12">
-            <div class="position-relative p-0 text-left" style="text-align: left; font-family: 'Nunito';">
-              <h3 class="text-dark font-weight-bold mb-4">How to Use the Tool</h3>
-              <p class="text-dark font-weight-normal mb-0">
-                Once the map loads, you can zoom in or out and drag the map to explore different areas of
-                Melbourne. Stormwater pits are marked with color-coded icons that indicate their risk level
-                (e.g., low, medium, high). Click on any marker to view detailed information about the specific
-                pit, including its condition, maintenance status, and risk level. The map includes a legend to
-                help you understand the different symbols and colors.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Education-->
   <section class="page-section bg-light" id="education">
     <div class="container px-4 px-lg-5" style="padding-top: 0; max-width: 98vw; margin: auto;">
@@ -211,7 +153,7 @@
         <div class="col-12 text-center mt-lg-5">
           <p class="text-uppercase"
             style="font-size: 25px; font-family: 'Varela Round', sans-serif; font-weight: 400; letter-spacing: 17px;">
-            Educational Content Integration
+            What can you do with the stormwater?
           </p>
         </div>
       </div>
@@ -300,7 +242,7 @@
           </div>
 
           <!-- Right column with embedded video -->
-          <div class="col-md-6 d-flex flex-column justify-content-center">
+          <div class="col-md-6 d-flex flex-column justify-content-center" style="margin-bottom: 50px;">
             <div class="video-container">
               <iframe src="https://www.youtube.com/embed/H5nn3atpLdY" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -310,16 +252,70 @@
 
         </div>
       </div>
+  
+    </div>
+    
+  </section>
 
+  <!-- Map-->
+  <section class="page-section bg-light" id="map">
+    <div class="container px-4 px-lg-5" style="padding-top: 0; max-width: 98vw; margin: auto;">
       <div class="row">
         <div class="col-12">
-          <hr style="border-top: 3px solid #000; width: 98%; margin-top: 50px; margin-bottom: 75px;">
+          <hr style="border-top: 3px solid black; width: 98%; margin-top: 100px;">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 text-center mt-lg-5">
+          <p class="text-uppercase"
+            style="font-size: 25px; font-family: 'Varela Round', sans-serif; font-weight: 400; letter-spacing: 17px;">
+            WHERE ARE STORMWATER PITS AVAILABLE IN MELBOURNE?
+          </p>
+        </div>
+      </div>
+
+      <div class="container mt-0">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+
+                <div class="map-placeholder" style="width: 100%; height: 70vh;  position: relative; border: none;">
+
+                  <iframe
+                    src="/stormwater"
+                    style="border:0; width: 100%; height: 100%; position: absolute; top: 0; left: 0;" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12">
+            <div class="position-relative p-0 text-left" style="text-align: left; font-family: 'Nunito';">
+              <h3 class="text-dark font-weight-bold mb-4">How to Use the Tool</h3>
+              <p class="text-dark font-weight-normal mb-0">
+                Once the map loads, you can zoom in or out and drag the map to explore different areas of
+                Melbourne. Stormwater pits are marked with color-coded icons that indicate their risk level
+                (e.g., low, medium, high). Click on any marker to view detailed information about the specific
+                pit, including its condition, maintenance status, and risk level. The map includes a legend to
+                help you understand the different symbols and colors.
+                <br><br><br>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
-
 
   <!-- Contact-->
   <section class="contact-section bg-black" id="contact">
